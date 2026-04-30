@@ -299,7 +299,7 @@ var AFFETTO = {
     wordmarkLine: "AFFETTO",
     organizationLine: "THE AFFETTO GROUP · LOS ANGELES, CA",
     contactLine: "partners@affetto.io",
-    copyrightLine: "© 2026 · CONFIDENTIAL PRELAUNCH"
+    copyrightLine: "© 2026 · PHASE - PRELAUNCH"
   }
 };
 window.AFFETTO = AFFETTO;
