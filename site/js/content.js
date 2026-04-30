@@ -21,24 +21,24 @@ var AFFETTO = {
   brand: {
     wordmark: "AFFETTO",
     legalName: "THE AFFETTO GROUP",
-    tagline: "Operational infrastructure / Dentistry",
+    tagline: "Operational Infrastructure - Dentistry",
     contactEmail: "partners@affetto.io",
     founderEmail: "tim.lin@affetto.io",
-    copyrightLine: "© 2026 · CONFIDENTIAL PRELAUNCH"
+    copyrightLine: "© 2026 · STEALTH PRELAUNCH"
   },
   topbar: {
     statusLabel: "PRE-LAUNCH",
-    rightLabel: "COMING SOON"
+    rightLabel: "WORK IN PROGRESS"
   },
   masthead: {
-    tagline: "OPERATIONAL INFRASTRUCTURE / DENTISTRY",
-    location: "LOS ANGELES, CA"
+    tagline: "OPERATIONAL INFRASTRUCTURE - DENTISTRY",
+    location: "LOS ANGELES, CALIFORNIA"
   },
   hero: {
-    sectionMarker: "§01 · Thesis",
-    headline: "Operational infrastructure for dentistry.",
-    subhead: "Affetto is the operating layer between the dental practice and the business that runs it.",
-    substanceParagraph: "Nine specialized agents, one shared data substrate, indifferent to the practice management system underneath. Built to run nonclinical operations across a single practice, a multi-location group, or a portfolio. From day-one diligence to long-run operation — the same engine, end to end.",
+    sectionMarker: "§01 · THESIS.",
+    headline: "The operational layer for dentistry.",
+    subhead: "",
+    substanceParagraph: "Affetto is the operating infrastructure between the dental practice and the business that runs it - specialized agents on a shared data substrate, indifferent to the practice management system underneath. One engine for an independent practice, a multi-site group, or a portfolio. From day-one diligence through steady-state operation, end-to-end.",
     ctaLabel: "Request early access",
     ctaTarget: "#access",
     metadataStrip: ["9 AGENTS", "ANY PMS", "LOS ANGELES", "2026"],
@@ -46,33 +46,33 @@ var AFFETTO = {
     previewJump: "§02 →"
   },
   system: {
-    sectionMarker: "§02 · The system",
+    sectionMarker: "§02 · THE SYSTEM.",
     subhead: "One engine. Any practice management system. Any scale.",
     layers: [{
       tag: "L0",
       name: "SOURCE",
-      caption: "Wherever the practice already runs its data"
+      caption: "Wherever the practice already sources its data"
     }, {
       tag: "L1",
       name: "CONNECTORS",
-      caption: "One adapter per system — Dentrix, Eaglesoft, Open Dental, Curve"
+      caption: "One adapter per system — PMS, EHR, API"
     }, {
       tag: "L2",
       name: "DATA CONTRACT",
       version: "v0.4.1",
-      caption: "The shared schema every agent reads from",
-      models: "patient · appointment · claim · production · payer"
+      caption: "The shared schema every agent works from",
+      models: "Patient · APPT · Billing · Analytics · RCM"
     }, {
       tag: "L3",
       name: "ENGINE",
       subtitle: "9 AGENTS",
-      caption: "The nonclinical operations team, in software"
+      caption: "The digital nonclinical operations team"
     }],
     whatThisMeansBeat: "One contract above. Adapters below. Agents that read the contract, not the source. Replace the practice management system tomorrow — the agents don't notice. This is what indifferent to PMS means in practice.",
     liveCaption: "ENGINE / AFFETTO 0.9.1 · LIVE"
   },
   forces: {
-    sectionMarker: "§03 · Operating environment",
+    sectionMarker: "§03 · OPERATING ENVIRONMENT",
     subhead: "Five forces, converging.",
     leadIn: "Five forces are reshaping dental at once — and converging on the same problem: the operational layer between the practice floor and the business that runs it.",
     cards: [{
@@ -127,30 +127,30 @@ var AFFETTO = {
     }]
   },
   outcomes: {
-    sectionMarker: "§04 · Outcomes",
+    sectionMarker: "§04 · OUTCOMES",
     subhead: "What it produces.",
     rows: [{
       number: "01",
-      statement: "Run multiple locations with the team of one.",
+      statement: "Run a 12-location group with the back-office headcount of a 4-location team.",
       line: "Operational headcount no longer scales linearly with footprint.",
       schematicType: "headcount-divergence",
-      schematicCaption: "operational headcount as locations grow — traditional vs Affetto"
+      schematicCaption: "Operational Headcount as Locations Grow — Traditional vs Affetto"
     }, {
       number: "02",
-      statement: "Acquire and integrate without rebuilding operations.",
-      line: "The same engine spans diligence, transition, and steady-state.",
+      statement: "Close an acquisition Friday, run integrated operations Monday.",
+      line: "The same engine spans diligence, transition, and steady-state procedures.",
       schematicType: "timeline-compression",
-      schematicCaption: "acquisition-to-integration timeline — traditional vs Affetto"
+      schematicCaption: "Acquisition-to-Integration Timeline — Traditional vs Affetto"
     }, {
       number: "03",
       statement: "Real-time visibility from chair to corporate.",
-      line: "Practice operations and business operations on the same data substrate.",
+      line: "Production at chair 4 of practice 7, visible at HQ in real time, on the same data.",
       schematicType: "bidirectional-flow",
       schematicCaption: "data substrate connecting practice floor and corporate"
     }]
   },
   agents: {
-    sectionMarker: "§05 · Nine specialized agents",
+    sectionMarker: "§05 · NINE SPECIALIZED AGENTS",
     subhead: "Each agent operates at two altitudes — the practice floor and the business above it.",
     detailHint: "Click any agent for both altitudes.",
     practiceLabel: "PRACTICE ALTITUDE",
@@ -316,10 +316,10 @@ var AFFETTO = {
   // Live Engine — operational view of the system, between §02 System
   // (architectural view) and §03 Forces. Synthetic data, scrolling stream.
   liveEngine: {
-    sectionMarker: "§02b · Live engine",
+    sectionMarker: "§02b · LIVE ENGINE",
     subhead: "One engine. Nine agents. One output stream.",
     leftCaption: "Live demonstration · Synthetic data · Cross-agent coordination",
-    streamHeader: "Output stream",
+    streamHeader: "Output Stream",
     statusLabel: "Streaming",
     agentStatus: "Agents · 9/9 nominal",
     metrics: [{
