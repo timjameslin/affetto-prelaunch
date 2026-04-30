@@ -27,6 +27,11 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 
 function ForceVisualStat(_ref) {
   var statValue = _ref.statValue;
+  // Render the stat as SVG with a viewBox so it scales to fit the card's
+  // actual width regardless of viewport. Previously hardcoded at 64px with
+  // whiteSpace:nowrap, which overflowed narrower cards.
+  // viewBox is 240×80, sized so a typical "~100,000" comfortably fits at
+  // 64px font; preserveAspectRatio shrinks proportionally on narrower cards.
   return /*#__PURE__*/React.createElement("div", {
     style: {
       width: "100%",
@@ -35,17 +40,24 @@ function ForceVisualStat(_ref) {
       alignItems: "center",
       justifyContent: "flex-start"
     }
-  }, /*#__PURE__*/React.createElement("span", {
+  }, /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 240 80",
+    width: "100%",
+    height: "100%",
+    preserveAspectRatio: "xMinYMid meet",
+    "aria-hidden": "true",
     style: {
-      fontFamily: "var(--display)",
-      fontSize: 64,
-      fontWeight: 500,
-      letterSpacing: "-0.04em",
-      lineHeight: 1.0,
-      color: "var(--ink)",
-      whiteSpace: "nowrap"
+      overflow: "visible"
     }
-  }, statValue));
+  }, /*#__PURE__*/React.createElement("text", {
+    x: "0",
+    y: "56",
+    fontFamily: "var(--display)",
+    fontSize: "64",
+    fontWeight: "500",
+    letterSpacing: "-0.04em",
+    fill: "var(--ink)"
+  }, statValue)));
 }
 function ForceVisualComparisonBars(_ref2) {
   var comparisonData = _ref2.comparisonData;

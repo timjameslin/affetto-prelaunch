@@ -305,7 +305,7 @@ function Hero(_ref4) {
       paddingBottom: sm ? 56 : 56,
       paddingLeft: "var(--margin)",
       paddingRight: "var(--margin)",
-      maxWidth: 1080 + 64 * 2,
+      maxWidth: 1280,
       margin: "0 auto",
       width: "100%"
     }
@@ -315,13 +315,15 @@ function Hero(_ref4) {
       flexDirection: "column",
       justifyContent: "center",
       flex: sm ? "none" : "1 1 auto",
-      paddingTop: sm ? 0 : 24
+      paddingTop: sm ? 0 : 24,
+      width: "100%",
+      maxWidth: sm ? "100%" : "min(720px, 62%)"
     }
   }, /*#__PURE__*/React.createElement(SectionMarker, {
     text: H.sectionMarker
   }), /*#__PURE__*/React.createElement("div", {
     style: {
-      maxWidth: 960
+      width: "100%"
     }
   }, /*#__PURE__*/React.createElement(Reveal, null, /*#__PURE__*/React.createElement("h1", {
     className: "t-display",

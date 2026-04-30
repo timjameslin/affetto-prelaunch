@@ -173,18 +173,20 @@ function OutcomeSchematicHeadcountDivergence() {
 // ── Schematic 02 — Timeline compression ─────────────────────────────
 
 function OutcomeSchematicTimelineCompression() {
+  // Redrawn: labels live OUTSIDE the bars (above TRADITIONAL, below AFFETTO).
+  // Bars become pure visual proportion — no text crammed into 5% segments.
+  // Each label has a thin leader line dropping down/rising up to its segment.
   var W = 480,
     H = 240;
   var PAD_L = 24,
-    PAD_R = 90;
+    PAD_R = 80;
   var innerW = W - PAD_L - PAD_R;
-  var TRAD_Y = 50,
-    AFF_Y = 110,
-    RULER_Y = 180;
-  var BAR_H = 24;
-
-  // TRADITIONAL — full innerW, 5 segments at proportions 10/5/35/35/15.
-  // Segment widths in proportions (sum to 1.0).
+  var TRAD_LABEL_Y = 28; // labels for traditional, above bar
+  var TRAD_BAR_Y = 76; // traditional bar
+  var AFF_BAR_Y = 116; // Affetto bar
+  var AFF_LABEL_Y = 168; // labels for Affetto, below bar
+  var RULER_Y = 198;
+  var BAR_H = 22;
   var tradSegments = [{
     label: "DILIGENCE",
     width: 0.10
@@ -202,134 +204,165 @@ function OutcomeSchematicTimelineCompression() {
     width: 0.15
   }];
 
-  // WITH AFFETTO — exactly 50% of innerW, 5 abbreviated segments.
-  var affSegments = [{
-    label: "DI",
-    width: 0.10
-  }, {
-    label: "CL",
-    width: 0.05
-  }, {
-    label: "INTEG",
-    width: 0.35
-  }, {
-    label: "STABI",
-    width: 0.35
-  }, {
-    label: "STD",
-    width: 0.15
-  }];
-
-  // Pixel widths
+  // Affetto same phase semantics, half the total duration.
+  var affSegments = tradSegments;
   var tradWidthPx = innerW;
   var affWidthPx = innerW * 0.5;
-  var tradX = PAD_L;
-  var affX = PAD_L;
   return /*#__PURE__*/React.createElement("svg", {
     viewBox: "0 0 ".concat(W, " ").concat(H),
     width: "100%",
     height: "100%",
     preserveAspectRatio: "xMidYMid meet",
     "aria-hidden": "true"
-  }, /*#__PURE__*/React.createElement("text", {
-    x: PAD_L,
-    y: TRAD_Y - 8,
-    fontFamily: "var(--sans)",
-    fontSize: "11",
-    fontWeight: "500",
-    letterSpacing: "0.08em",
-    fill: "var(--ink)"
-  }, "TRADITIONAL"), tradSegments.map(function (s, i) {
-    var w = s.width * tradWidthPx;
-    var x = tradX;
-    tradX += w;
-    var cx = x + w / 2;
-    return /*#__PURE__*/React.createElement("g", {
-      key: "t".concat(i)
-    }, /*#__PURE__*/React.createElement("rect", {
-      x: x,
-      y: TRAD_Y,
-      width: w,
-      height: BAR_H,
-      fill: "var(--ink-3)"
-    }), i < tradSegments.length - 1 && /*#__PURE__*/React.createElement("line", {
-      x1: x + w,
-      y1: TRAD_Y,
-      x2: x + w,
-      y2: TRAD_Y + BAR_H,
-      stroke: "var(--paper)",
-      strokeWidth: "1.5"
-    }), /*#__PURE__*/React.createElement("text", {
-      x: cx,
-      y: TRAD_Y + BAR_H / 2 + 3,
-      fontFamily: "var(--sans)",
-      fontSize: "9",
-      fontWeight: "500",
-      letterSpacing: "0.06em",
-      fill: "var(--paper)",
-      textAnchor: "middle"
-    }, w > 36 ? s.label : ""));
-  }), /*#__PURE__*/React.createElement("text", {
-    x: PAD_L + tradWidthPx + 8,
-    y: TRAD_Y + BAR_H / 2 + 4,
-    fontFamily: "var(--sans)",
-    fontSize: "11",
-    fontWeight: "500",
-    fill: "var(--ink)"
-  }, "12 months"), /*#__PURE__*/React.createElement("text", {
-    x: PAD_L,
-    y: AFF_Y - 8,
-    fontFamily: "var(--sans)",
-    fontSize: "11",
-    fontWeight: "500",
-    letterSpacing: "0.08em",
-    fill: "var(--ink)"
-  }, "WITH AFFETTO"), affSegments.map(function (s, i) {
-    var w = s.width * affWidthPx;
-    var x = affX;
-    affX += w;
-    var cx = x + w / 2;
-    return /*#__PURE__*/React.createElement("g", {
-      key: "a".concat(i)
-    }, /*#__PURE__*/React.createElement("rect", {
-      x: x,
-      y: AFF_Y,
-      width: w,
-      height: BAR_H,
-      fill: "var(--ink)"
-    }), i < affSegments.length - 1 && /*#__PURE__*/React.createElement("line", {
-      x1: x + w,
-      y1: AFF_Y,
-      x2: x + w,
-      y2: AFF_Y + BAR_H,
-      stroke: "var(--paper)",
-      strokeWidth: "1.5"
-    }), /*#__PURE__*/React.createElement("text", {
-      x: cx,
-      y: AFF_Y + BAR_H / 2 + 3,
-      fontFamily: "var(--sans)",
-      fontSize: "9",
-      fontWeight: "500",
-      letterSpacing: "0.06em",
-      fill: "var(--paper)",
-      textAnchor: "middle"
-    }, w > 22 ? s.label : ""));
-  }), /*#__PURE__*/React.createElement("text", {
-    x: PAD_L + affWidthPx + 8,
-    y: AFF_Y + BAR_H / 2 + 4,
-    fontFamily: "var(--sans)",
-    fontSize: "11",
-    fontWeight: "500",
-    fill: "var(--ink)"
-  }, "6 months"), /*#__PURE__*/React.createElement("text", {
-    x: PAD_L,
-    y: AFF_Y + BAR_H + 18,
+  }, function () {
+    var x = PAD_L;
+    return tradSegments.map(function (s, i) {
+      var w = s.width * tradWidthPx;
+      var cx = x + w / 2;
+      x += w;
+      // Stagger labels vertically so adjacent labels don't collide.
+      // Even-indexed phases sit higher; odd-indexed phases sit lower.
+      var labelY = i % 2 === 0 ? TRAD_LABEL_Y : TRAD_LABEL_Y + 14;
+      var leaderTopY = labelY + 4;
+      return /*#__PURE__*/React.createElement("g", {
+        key: "tlabel".concat(i)
+      }, /*#__PURE__*/React.createElement("text", {
+        x: cx,
+        y: labelY,
+        fontFamily: "var(--sans)",
+        fontSize: "9",
+        fontWeight: "500",
+        letterSpacing: "0.08em",
+        fill: "var(--ink-2)",
+        textAnchor: "middle"
+      }, s.label), /*#__PURE__*/React.createElement("line", {
+        x1: cx,
+        y1: leaderTopY,
+        x2: cx,
+        y2: TRAD_BAR_Y - 2,
+        stroke: "var(--ink-3)",
+        strokeWidth: "0.5",
+        strokeOpacity: "0.7"
+      }));
+    });
+  }(), /*#__PURE__*/React.createElement("text", {
+    x: PAD_L - 4,
+    y: TRAD_BAR_Y + BAR_H / 2 + 4,
     fontFamily: "var(--sans)",
     fontSize: "10",
-    fontWeight: "500",
-    letterSpacing: "0.08em",
+    fontWeight: "600",
+    letterSpacing: "0.10em",
+    fill: "var(--ink)",
+    textAnchor: "end"
+  }, "TRAD."), function () {
+    var x = PAD_L;
+    return tradSegments.map(function (s, i) {
+      var w = s.width * tradWidthPx;
+      var seg = /*#__PURE__*/React.createElement("g", {
+        key: "tbar".concat(i)
+      }, /*#__PURE__*/React.createElement("rect", {
+        x: x,
+        y: TRAD_BAR_Y,
+        width: w,
+        height: BAR_H,
+        fill: "var(--ink-3)"
+      }), i < tradSegments.length - 1 && /*#__PURE__*/React.createElement("line", {
+        x1: x + w,
+        y1: TRAD_BAR_Y,
+        x2: x + w,
+        y2: TRAD_BAR_Y + BAR_H,
+        stroke: "var(--paper)",
+        strokeWidth: "1"
+      }));
+      x += w;
+      return seg;
+    });
+  }(), /*#__PURE__*/React.createElement("text", {
+    x: PAD_L + tradWidthPx + 8,
+    y: TRAD_BAR_Y + BAR_H / 2 + 4,
+    fontFamily: "var(--sans)",
+    fontSize: "11",
+    fontWeight: "600",
+    fill: "var(--ink)"
+  }, "12 mo"), /*#__PURE__*/React.createElement("text", {
+    x: PAD_L - 4,
+    y: AFF_BAR_Y + BAR_H / 2 + 4,
+    fontFamily: "var(--sans)",
+    fontSize: "10",
+    fontWeight: "600",
+    letterSpacing: "0.10em",
+    fill: "var(--ink)",
+    textAnchor: "end"
+  }, "AFFETTO"), function () {
+    var x = PAD_L;
+    return affSegments.map(function (s, i) {
+      var w = s.width * affWidthPx;
+      var seg = /*#__PURE__*/React.createElement("g", {
+        key: "abar".concat(i)
+      }, /*#__PURE__*/React.createElement("rect", {
+        x: x,
+        y: AFF_BAR_Y,
+        width: w,
+        height: BAR_H,
+        fill: "var(--ink)"
+      }), i < affSegments.length - 1 && /*#__PURE__*/React.createElement("line", {
+        x1: x + w,
+        y1: AFF_BAR_Y,
+        x2: x + w,
+        y2: AFF_BAR_Y + BAR_H,
+        stroke: "var(--paper)",
+        strokeWidth: "1"
+      }));
+      x += w;
+      return seg;
+    });
+  }(), /*#__PURE__*/React.createElement("text", {
+    x: PAD_L + affWidthPx + 8,
+    y: AFF_BAR_Y + BAR_H / 2 + 4,
+    fontFamily: "var(--sans)",
+    fontSize: "11",
+    fontWeight: "600",
+    fill: "var(--ink)"
+  }, "6 mo"), function () {
+    var x = PAD_L;
+    return affSegments.map(function (s, i) {
+      var w = s.width * affWidthPx;
+      var cx = x + w / 2;
+      x += w;
+      var labelY = i % 2 === 0 ? AFF_LABEL_Y : AFF_LABEL_Y + 14;
+      // Hide labels for the smallest segments at this scale (CL at ~12px wide
+      // can't be reasonably labeled even outside; we let TRAD row do that work).
+      if (w < 18 && i % 2 === 1) return null;
+      return /*#__PURE__*/React.createElement("g", {
+        key: "alabel".concat(i)
+      }, /*#__PURE__*/React.createElement("line", {
+        x1: cx,
+        y1: AFF_BAR_Y + BAR_H + 2,
+        x2: cx,
+        y2: labelY - 8,
+        stroke: "var(--ink-3)",
+        strokeWidth: "0.5",
+        strokeOpacity: "0.7"
+      }), /*#__PURE__*/React.createElement("text", {
+        x: cx,
+        y: labelY,
+        fontFamily: "var(--sans)",
+        fontSize: "8",
+        fontWeight: "500",
+        letterSpacing: "0.08em",
+        fill: "var(--ink-2)",
+        textAnchor: "middle"
+      }, s.label));
+    });
+  }(), /*#__PURE__*/React.createElement("text", {
+    x: PAD_L,
+    y: H - 8,
+    fontFamily: "var(--sans)",
+    fontSize: "10",
+    fontWeight: "600",
+    letterSpacing: "0.10em",
     fill: "var(--accent)"
-  }, "\u2500\u2500 50% compression \u2500\u2500"), /*#__PURE__*/React.createElement("line", {
+  }, "\u2500\u2500 50% COMPRESSION \u2500\u2500"), /*#__PURE__*/React.createElement("line", {
     x1: PAD_L,
     y1: RULER_Y,
     x2: PAD_L + innerW,
@@ -351,11 +384,11 @@ function OutcomeSchematicTimelineCompression() {
       y2: RULER_Y + 4,
       stroke: "var(--ink-3)",
       strokeWidth: "1"
-    }), (m === 0 || m === 6 || m === 12 || m % 3 === 0) && /*#__PURE__*/React.createElement("text", {
+    }), (m === 0 || m === 6 || m === 12) && /*#__PURE__*/React.createElement("text", {
       x: x,
-      y: RULER_Y + 18,
+      y: RULER_Y + 16,
       fontFamily: "var(--sans)",
-      fontSize: "10",
+      fontSize: "9",
       fill: "var(--ink-3)",
       textAnchor: "middle"
     }, "M", m));
