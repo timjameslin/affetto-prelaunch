@@ -16,29 +16,28 @@ var AFFETTO = {
       "short": "LAX"
     },
     domain: "affetto.io",
-    publicReleaseQuarter: "Q3 2026"
+    publicReleaseQuarter: "Q4 2026"
   },
   brand: {
     wordmark: "AFFETTO",
     legalName: "THE AFFETTO GROUP",
-    tagline: "Operational infrastructure / Dentistry",
+    tagline: "Operational Infrastructure - Dentistry",
     contactEmail: "partners@affetto.io",
     founderEmail: "tim.lin@affetto.io",
-    copyrightLine: "© 2026 · CONFIDENTIAL PRELAUNCH"
+    copyrightLine: "© 2026 · PHASE - PRELAUNCH"
   },
   topbar: {
     statusLabel: "PRE-LAUNCH",
-    rightLabel: "COMING SOON"
+    rightLabel: 
   },
   masthead: {
-    tagline: "OPERATIONAL INFRASTRUCTURE / DENTISTRY",
+    tagline: "OPERATIONAL INFRASTRUCTURE - DENTISTRY",
     location: "LOS ANGELES, CA"
   },
   hero: {
     sectionMarker: "§01 · Thesis",
-    headline: "Operational infrastructure for dentistry.",
-    subhead: "Affetto is the operating layer between the dental practice and the business that runs it.",
-    substanceParagraph: "Nine specialized agents, one shared data substrate, indifferent to the practice management system underneath. Built to run nonclinical operations across a single practice, a multi-location group, or a portfolio. From day-one diligence to long-run operation — the same engine, end to end.",
+    headline: "The operational layer for dentistry.",
+    substanceParagraph: "Affetto is the operating infrastructure between the dental practice and the business that runs it. Nine specialized agents, one shared data substrate, indifferent to the practice management system underneath. Built to run nonclinical operations across a single practice, a multi-location group, or a portfolio. From day-one diligence to long-run operation — the same engine, end to end.",
     ctaLabel: "Request early access",
     ctaTarget: "#access",
     metadataStrip: ["9 AGENTS", "ANY PMS", "LOS ANGELES", "2026"],
