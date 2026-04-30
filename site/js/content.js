@@ -16,7 +16,7 @@ var AFFETTO = {
       "short": "LAX"
     },
     domain: "affetto.io",
-    publicReleaseQuarter: "Q4 2026"
+    publicReleaseQuarter: "Q3 2026"
   },
   brand: {
     wordmark: "AFFETTO",
@@ -24,11 +24,11 @@ var AFFETTO = {
     tagline: "Operational Infrastructure - Dentistry",
     contactEmail: "partners@affetto.io",
     founderEmail: "tim.lin@affetto.io",
-    copyrightLine: "© 2026 · PHASE - PRELAUNCH"
+    copyrightLine: "© 2026 · CONFIDENTIAL PRELAUNCH"
   },
   topbar: {
     statusLabel: "PRE-LAUNCH",
-    rightLabel: 
+    rightLabel: ""
   },
   masthead: {
     tagline: "OPERATIONAL INFRASTRUCTURE - DENTISTRY",
@@ -37,6 +37,7 @@ var AFFETTO = {
   hero: {
     sectionMarker: "§01 · Thesis",
     headline: "The operational layer for dentistry.",
+    subhead: "",
     substanceParagraph: "Affetto is the operating infrastructure between the dental practice and the business that runs it. Nine specialized agents, one shared data substrate, indifferent to the practice management system underneath. Built to run nonclinical operations across a single practice, a multi-location group, or a portfolio. From day-one diligence to long-run operation — the same engine, end to end.",
     ctaLabel: "Request early access",
     ctaTarget: "#access",
