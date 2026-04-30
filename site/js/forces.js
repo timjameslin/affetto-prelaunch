@@ -384,7 +384,8 @@ function ForceCard(_ref5) {
       color: "var(--ink-2)",
       textWrap: "pretty",
       flex: "1 1 auto",
-      lineHeight: 1.55
+      lineHeight: 1.55,
+      maxWidth: "44ch"
     }
   }, card.line));
 }
@@ -399,20 +400,25 @@ function FiveForces(_ref6) {
     cards: []
   };
 
-  // Desktop ≥1280: 5 across, gap 16. Wide tablet 1100-1279: 5 across, gap 12.
-  // Tablet 768-1099 (md): 2 cols, fifth spans full width.
-  // Mobile <768 (sm): single column, gap 24.
-  var gridTemplate, gap;
-  if (sm) {
-    gridTemplate = "1fr";
-    gap = 24;
-  } else if (md) {
-    gridTemplate = "repeat(2, minmax(0, 1fr))";
-    gap = 16;
-  } else {
-    gridTemplate = "repeat(5, minmax(0, 1fr))";
-    gap = 16;
-  }
+  // Layout strategy:
+  //   Mobile (sm):  single column.
+  //   Tablet (md):  2 cols. Last card spans full width on its own row.
+  //   Desktop (lg): 3+2 asymmetric — first three cards (industry forces:
+  //                 Consolidation, Restructuring, Labor) sit in row one;
+  //                 last two (technology forces: Autonomy, Fragmentation)
+  //                 sit in row two at 1/2 width each. Gives each card
+  //                 75–167% more horizontal real estate vs the old 5-across.
+  var topCards = F.cards.slice(0, 3);
+  var bottomCards = F.cards.slice(3);
+
+  // Per-breakpoint grid templates
+  var mobileTemplate = "1fr";
+  var tabletTemplate = "repeat(2, minmax(0, 1fr))";
+  var topTemplate = "repeat(3, minmax(0, 1fr))";
+  var bottomTemplate = "repeat(2, minmax(0, 1fr))";
+  var gap = 16;
+  var rowGap = 16;
+  if (sm) gap = 24;
   return /*#__PURE__*/React.createElement("section", {
     id: "forces",
     style: {
@@ -442,28 +448,88 @@ function FiveForces(_ref6) {
       textWrap: "pretty",
       maxWidth: "70ch"
     }
-  }, F.leadIn)), /*#__PURE__*/React.createElement("div", {
+  }, F.leadIn)), sm && /*#__PURE__*/React.createElement("div", {
     style: {
       display: "grid",
-      gridTemplateColumns: gridTemplate,
+      gridTemplateColumns: mobileTemplate,
+      gap: gap,
+      alignItems: "stretch"
+    }
+  }, F.cards.map(function (card, i) {
+    return /*#__PURE__*/React.createElement(Reveal, {
+      key: card.number,
+      delay: i * 60,
+      style: {
+        height: "100%"
+      }
+    }, /*#__PURE__*/React.createElement(ForceCard, {
+      card: card,
+      sm: sm
+    }));
+  })), md && !sm && /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "grid",
+      gridTemplateColumns: tabletTemplate,
       gap: gap,
       alignItems: "stretch"
     }
   }, F.cards.map(function (card, i) {
     var last = i === F.cards.length - 1;
-    var tabletSpan = md && last ? {
+    var span = last ? {
       gridColumn: "1 / -1"
     } : {};
     return /*#__PURE__*/React.createElement(Reveal, {
       key: card.number,
       delay: i * 60,
-      style: _objectSpread(_objectSpread({}, tabletSpan), {}, {
+      style: _objectSpread(_objectSpread({}, span), {}, {
         height: "100%"
       })
     }, /*#__PURE__*/React.createElement(ForceCard, {
       card: card,
       sm: sm
     }));
-  }))));
+  })), !sm && !md && /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      flexDirection: "column",
+      gap: rowGap
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "grid",
+      gridTemplateColumns: topTemplate,
+      gap: gap,
+      alignItems: "stretch"
+    }
+  }, topCards.map(function (card, i) {
+    return /*#__PURE__*/React.createElement(Reveal, {
+      key: card.number,
+      delay: i * 60,
+      style: {
+        height: "100%"
+      }
+    }, /*#__PURE__*/React.createElement(ForceCard, {
+      card: card,
+      sm: sm
+    }));
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "grid",
+      gridTemplateColumns: bottomTemplate,
+      gap: gap,
+      alignItems: "stretch"
+    }
+  }, bottomCards.map(function (card, i) {
+    return /*#__PURE__*/React.createElement(Reveal, {
+      key: card.number,
+      delay: (i + 3) * 60,
+      style: {
+        height: "100%"
+      }
+    }, /*#__PURE__*/React.createElement(ForceCard, {
+      card: card,
+      sm: sm
+    }));
+  })))));
 }
 window.FiveForces = FiveForces;
