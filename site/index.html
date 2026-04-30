@@ -197,6 +197,18 @@
     outline-offset: 4px;
   }
 
+  /* Inline mid-page CTA — subtle typographic affordance after Outcomes */
+  .inline-cta {
+    border-bottom-color: var(--rule-soft);
+    transition: border-bottom-color 200ms ease;
+  }
+  .inline-cta:hover {
+    border-bottom-color: var(--ink);
+  }
+  .inline-cta:hover .inline-cta-arrow {
+    transform: translateX(4px);
+  }
+
   /* "What this means" beat — quoted block in System section */
   .what-this-means {
     /* Layout supplied inline; print rule preserved below. */
