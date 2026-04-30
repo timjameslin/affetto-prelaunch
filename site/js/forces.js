@@ -27,11 +27,18 @@ function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e 
 
 function ForceVisualStat(_ref) {
   var statValue = _ref.statValue;
-  // Render the stat as SVG with a viewBox so it scales to fit the card's
-  // actual width regardless of viewport. Previously hardcoded at 64px with
-  // whiteSpace:nowrap, which overflowed narrower cards.
-  // viewBox is 240×80, sized so a typical "~100,000" comfortably fits at
-  // 64px font; preserveAspectRatio shrinks proportionally on narrower cards.
+  // Render the stat as SVG with a viewBox so it scales to fit the card width.
+  //
+  // Sizing strategy:
+  //   - width="100%" makes the SVG fill the container's width.
+  //   - height="auto" lets browser compute height from the viewBox aspect ratio.
+  //   - This way, the stat ALWAYS scales to the card width, never overflows.
+  //   - viewBox 280×80 gives ~16% headroom over the natural width of "~100,000"
+  //     at fontSize 64 with letterSpacing -0.04em (~240 units), so even with
+  //     edge-case font rendering or character variation, the glyphs fit inside
+  //     the SVG bounding box.
+  //   - Outer flexbox alignment keeps the (now shorter than 160px) SVG centered
+  //     vertically within the 160px visual region.
   return /*#__PURE__*/React.createElement("div", {
     style: {
       width: "100%",
@@ -41,17 +48,18 @@ function ForceVisualStat(_ref) {
       justifyContent: "flex-start"
     }
   }, /*#__PURE__*/React.createElement("svg", {
-    viewBox: "0 0 240 80",
+    viewBox: "0 0 280 80",
     width: "100%",
-    height: "100%",
     preserveAspectRatio: "xMinYMid meet",
     "aria-hidden": "true",
     style: {
-      overflow: "visible"
+      display: "block",
+      height: "auto",
+      maxHeight: "100%"
     }
   }, /*#__PURE__*/React.createElement("text", {
     x: "0",
-    y: "56",
+    y: "64",
     fontFamily: "var(--display)",
     fontSize: "64",
     fontWeight: "500",
