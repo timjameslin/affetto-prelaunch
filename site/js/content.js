@@ -35,7 +35,7 @@ var AFFETTO = {
     location: "LOS ANGELES, CA"
   },
   hero: {
-    sectionMarker: "§01 · Thesis",
+    sectionMarker: "§01 · THESIS",
     headline: "The operational layer for dentistry.",
     subhead: "",
     substanceParagraph: "Affetto is the operating infrastructure between the dental practice and the business that runs it. Nine specialized agents, one shared data substrate, indifferent to the practice management system underneath. Built to run nonclinical operations across a single practice, a multi-location group, or a portfolio. From day-one diligence to long-run operation — the same engine, end to end.",
@@ -46,7 +46,7 @@ var AFFETTO = {
     previewJump: "§02 →"
   },
   system: {
-    sectionMarker: "§02 · The system",
+    sectionMarker: "§02 · THE SYSTEM",
     subhead: "One engine. Any practice management system. Any scale.",
     layers: [{
       tag: "L0",
@@ -71,7 +71,7 @@ var AFFETTO = {
     liveCaption: "ENGINE / AFFETTO 0.8.0 · LIVE"
   },
   forces: {
-    sectionMarker: "§03 · Operating environment",
+    sectionMarker: "§03 · OPERATING ENVIRONMENT",
     subhead: "Five forces, converging.",
     leadIn: "Five forces are reshaping dental at once — and converging on the same problem: the operational layer between the practice floor and the business that runs it.",
     cards: [{
@@ -126,7 +126,7 @@ var AFFETTO = {
     }]
   },
   outcomes: {
-    sectionMarker: "§04 · Outcomes",
+    sectionMarker: "§04 · OUTCOMES",
     subhead: "What it produces.",
     rows: [{
       number: "01",
@@ -149,7 +149,7 @@ var AFFETTO = {
     }]
   },
   agents: {
-    sectionMarker: "§05 · Nine specialized agents",
+    sectionMarker: "§05 · NINE SPECIALIZED AGENTS",
     subhead: "Each agent operates at two altitudes — the practice floor and the business above it.",
     detailHint: "Click any agent for both altitudes.",
     practiceLabel: "PRACTICE ALTITUDE",
@@ -240,7 +240,7 @@ var AFFETTO = {
     }]
   },
   lifecycle: {
-    sectionMarker: "§06 · Embedded across the lifecycle",
+    sectionMarker: "§06 · EMBEDDED ACROSS THE LIFECYCLE",
     subhead: "One engine, present at every stage of a practice's life.",
     stages: [{
       number: "01",
@@ -265,7 +265,7 @@ var AFFETTO = {
     }]
   },
   access: {
-    sectionMarker: "§07 · Access",
+    sectionMarker: "§07 · ACCESS",
     eyebrow: "PRE-LAUNCH WAITLIST",
     headline: "Request early access.",
     subhead: "Open to practice owners, group operators, DSOs, and institutional investors. We are taking on a small number of partners ahead of public release.",
@@ -273,20 +273,20 @@ var AFFETTO = {
     emailLabel: "EMAIL ADDRESS",
     emailPlaceholder: "you@practice.com",
     audienceLabel: "I'M A...",
-    audienceOptional: "(optional)",
+    audienceOptional: "(OPTIONAL)",
     audiencePlaceholder: "Select…",
     audienceOptions: [{
       value: "practice",
-      label: "Practice owner"
+      label: "Practice Owner"
     }, {
       value: "group",
-      label: "Group operator (2–10 locations)"
+      label: "Group Operator (2–10 Locations)"
     }, {
       value: "dso",
-      label: "DSO operator (10+ locations)"
+      label: "DSO Operator (10+ Locations)"
     }, {
       value: "investor",
-      label: "Institutional investor"
+      label: "Institutional Investor"
     }, {
       value: "other",
       label: "Other"
