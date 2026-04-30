@@ -38,7 +38,7 @@ var AFFETTO = {
     sectionMarker: "§01 · THESIS",
     headline: "The operational layer for dentistry.",
     subhead: "",
-    substanceParagraph: "Affetto is the operating infrastructure between the dental practice and the business that runs it. Nine specialized agents, one shared data substrate, indifferent to the practice management system underneath. Built to run nonclinical operations across a single practice, a multi-location group, or a portfolio. From day-one diligence to long-run operation — the same engine, end to end.",
+    substanceParagraph: "Affetto is the operating infrastructure between the dental practice and the business that runs it. Specialized agents on a shared data substrate, indifferent to the practice management system underneath. One engine for an independent practice, a multi-site group, or a portfolio. From day-one diligence through steady-state operations, end to end.",
     ctaLabel: "Request early access",
     ctaTarget: "#access",
     metadataStrip: ["9 AGENTS", "ANY PMS", "LOS ANGELES", "2026"],
@@ -130,22 +130,22 @@ var AFFETTO = {
     subhead: "What it produces.",
     rows: [{
       number: "01",
-      statement: "Run multiple locations with the team of one.",
-      line: "Operational headcount no longer scales linearly with footprint.",
+      statement: "Run a 12-location group with the back-office headcount of a 4-location group.",
+      line: "Operational headcount no longer scales linearly with practice footprints.",
       schematicType: "headcount-divergence",
-      schematicCaption: "operational headcount as locations grow — traditional vs Affetto"
+      schematicCaption: "Operational headcount as locations grow — Traditional vs Affetto"
     }, {
       number: "02",
-      statement: "Acquire and integrate without rebuilding operations.",
+      statement: "Close an acquisition Friday, run integrated operations Monday.",
       line: "The same engine spans diligence, transition, and steady-state.",
       schematicType: "timeline-compression",
-      schematicCaption: "acquisition-to-integration timeline — traditional vs Affetto"
+      schematicCaption: "Acquisition-to-integration timeline — Traditional vs Affetto"
     }, {
       number: "03",
       statement: "Real-time visibility from chair to corporate.",
-      line: "Practice operations and business operations on the same data substrate.",
+      line: "Production at chair 4 of practice 7 visible at HQ in real time, on the same data.",
       schematicType: "bidirectional-flow",
-      schematicCaption: "data substrate connecting practice floor and corporate"
+      schematicCaption: "Data substrate connecting practice floor and corporate"
     }]
   },
   agents: {
@@ -269,12 +269,12 @@ var AFFETTO = {
     eyebrow: "PRE-LAUNCH WAITLIST",
     headline: "Request early access.",
     subhead: "Open to practice owners, group operators, DSOs, and institutional investors. We are taking on a small number of partners ahead of public release.",
-    closingLine: "Founders read every reply.",
+    closingLine: "BUILT BY DENTAL OPERATORS. FOUNDERS READ EVERY REPLY.",
     emailLabel: "EMAIL ADDRESS",
     emailPlaceholder: "you@practice.com",
     audienceLabel: "I'M A...",
     audienceOptional: "(OPTIONAL)",
-    audiencePlaceholder: "Select…",
+    audiencePlaceholder: "SELECT…",
     audienceOptions: [{
       value: "practice",
       label: "Practice Owner"
@@ -291,15 +291,15 @@ var AFFETTO = {
       value: "other",
       label: "Other"
     }],
-    submitLabel: "Request access",
-    submittedLabel: "Received — confirmation queued"
+    submitLabel: "Request Access",
+    submittedLabel: "Received — Confirmation Queued"
   },
   trustStrip: ["HIPAA-COMPLIANT", "BAA AVAILABLE", "END-TO-END ENCRYPTED"],
   footer: {
     wordmarkLine: "AFFETTO",
     organizationLine: "THE AFFETTO GROUP · LOS ANGELES, CA",
     contactLine: "partners@affetto.io",
-    copyrightLine: "© 2026 · CONFIDENTIAL PRELAUNCH"
+    copyrightLine: "© 2026 · STEALTH PRE-LAUNCH"
   }
 };
 window.AFFETTO = AFFETTO;
