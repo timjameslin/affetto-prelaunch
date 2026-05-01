@@ -21,24 +21,24 @@ var AFFETTO = {
   brand: {
     wordmark: "AFFETTO",
     legalName: "THE AFFETTO GROUP",
-    tagline: "Operational infrastructure / Dentistry",
+    tagline: "Operational Infrastructure - Dentistry",
     contactEmail: "partners@affetto.io",
     founderEmail: "tim.lin@affetto.io",
-    copyrightLine: "© 2026 · CONFIDENTIAL PRELAUNCH"
+    copyrightLine: "© 2026 · STEALTH PRELAUNCH"
   },
   topbar: {
     statusLabel: "PRE-LAUNCH",
-    rightLabel: "COMING SOON"
+    rightLabel: "WORK IN PROGRESS"
   },
   masthead: {
-    tagline: "OPERATIONAL INFRASTRUCTURE / DENTISTRY",
+    tagline: "OPERATIONAL INFRASTRUCTURE - DENTISTRY",
     location: "LOS ANGELES, CA"
   },
   hero: {
     sectionMarker: "§01 · Thesis",
-    headline: "Operational infrastructure for dentistry.",
-    subhead: "Affetto is the operating layer between the dental practice and the business that runs it.",
-    substanceParagraph: "Nine specialized agents, one shared data substrate, indifferent to the practice management system underneath. Built to run nonclinical operations across a single practice, a multi-location group, or a portfolio. From day-one diligence to long-run operation — the same engine, end to end.",
+    headline: "The operational layer for dentistry.",
+    subhead: "",
+    substanceParagraph: "Affetto is the operating infrastructure between the dental practice and the business that runs it, with specialized agents on a shared data substrate, indifferent to the practice management system underneath. One engine for an independent practice, a multi-site group, or a portfolio. From day-one diligence through steady-state operation, end-to-end.",
     ctaLabel: "Request early access",
     ctaTarget: "#access",
     metadataStrip: ["9 AGENTS", "ANY PMS", "LOS ANGELES", "2026"],
@@ -131,22 +131,22 @@ var AFFETTO = {
     subhead: "What it produces.",
     rows: [{
       number: "01",
-      statement: "Run multiple locations with the team of one.",
+      statement: "Run a 12-location group with the nonclinical headcount of a 4-location team.",
       line: "Operational headcount no longer scales linearly with footprint.",
       schematicType: "headcount-divergence",
-      schematicCaption: "operational headcount as locations grow — traditional vs Affetto"
+      schematicCaption: "Operational Headcount as Locations Grow — Traditional vs Affetto"
     }, {
       number: "02",
-      statement: "Acquire and integrate without rebuilding operations.",
-      line: "The same engine spans diligence, transition, and steady-state.",
+      statement: "Close an acquisition Friday, run integrated operations Monday.",
+      line: "The same engine spans diligence, transition, and steady-state processes.",
       schematicType: "timeline-compression",
-      schematicCaption: "acquisition-to-integration timeline — traditional vs Affetto"
+      schematicCaption: "Acquisition-to-Integration Timeline — Traditional vs Affetto"
     }, {
       number: "03",
       statement: "Real-time visibility from chair to corporate.",
-      line: "Practice operations and business operations on the same data substrate.",
+      line: "Production at chair 4 of practice 7, visible at HQ in real time, on the same data.",
       schematicType: "bidirectional-flow",
-      schematicCaption: "data substrate connecting practice floor and corporate"
+      schematicCaption: "Data Substrate Connecting Practice Floor and Corporate Office"
     }]
   },
   agents: {
