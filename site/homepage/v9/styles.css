@@ -1053,6 +1053,17 @@ img, svg { display: block; max-width: 100%; }
 }
 .featured-desc.fading { opacity: 0; }
 
+/* When the featured agent rotates on mobile, descriptions of different
+   lengths would re-flow the panel height and push the rest of the page
+   up/down. Reserve space for the longest description so the surrounding
+   layout stays stable across the rotation cycle. */
+@media (max-width: 899px) {
+  .featured-desc {
+    max-width: none;
+    min-height: calc(1.5em * 5);
+  }
+}
+
 .featured-bridge {
   margin-top: auto;
   padding-top: 20px;
@@ -1363,7 +1374,9 @@ img, svg { display: block; max-width: 100%; }
 }
 @media (max-width: 599px) {
   .layer { padding: 24px 0; }
-  .layer .layer-body { padding-left: 0; }
+  /* keep .layer-body indented under the L-name column (padding-left: 76px
+     from the 1099px rule still applies) so chips align with the section
+     content rather than jumping to the page edge */
 }
 
 .layer-num {
@@ -1671,9 +1684,9 @@ img, svg { display: block; max-width: 100%; }
   .force { grid-template-columns: 60px 1fr; gap: 20px; }
   .force-stat { grid-column: 1 / -1; padding-left: 80px; margin-top: 8px; }
 }
-@media (max-width: 479px) {
-  .force-stat { padding-left: 0; }
-}
+/* keep .force-stat indented under the force-name column at all widths
+   (padding-left: 80px from the 1099px rule applies to small mobile too)
+   so the stat block visually aligns with the headline + description */
 
 .force-num {
   font-family: var(--md-sys-typescale-mono-family);
