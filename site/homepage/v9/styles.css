@@ -1874,7 +1874,51 @@ img, svg { display: block; max-width: 100%; }
 }
 .field-submit[disabled] {
   cursor: default;
-  opacity: 0.6;
+}
+.field-submit:not(.is-submitting):not(.is-success)[disabled] { opacity: 0.6; }
+.field-submit:hover:disabled { background: var(--ink); }
+
+/* Submitting — replace icon with a spinning ring, dim slightly */
+.field-submit.is-submitting {
+  opacity: 0.85;
+  cursor: progress;
+}
+.field-submit.is-submitting:hover { background: var(--ink); }
+.field-submit .spinner {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+  border: 1.5px solid rgba(247, 244, 237, 0.28);
+  border-top-color: var(--paper);
+  border-radius: 50%;
+  animation: submit-spin 0.75s linear infinite;
+}
+@keyframes submit-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .field-submit .spinner { animation: none; }
+}
+
+/* Success — green confirmation state */
+.field-submit.is-success,
+.field-submit.is-success:hover {
+  background: var(--success);
+  color: var(--md-sys-color-on-success);
+  cursor: default;
+  animation: submit-success-in var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-emphasized-decelerate);
+}
+.field-submit.is-success .check {
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+}
+@keyframes submit-success-in {
+  0%   { transform: scale(0.985); }
+  60%  { transform: scale(1.012); }
+  100% { transform: scale(1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .field-submit.is-success { animation: none; }
 }
 
 .field-error {

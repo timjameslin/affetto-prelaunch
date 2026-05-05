@@ -498,9 +498,31 @@
       errorEl.textContent = '';
       errorEl.hidden = true;
     }
+    /* Button visual states. The submit button passes through three states
+       during a successful submission: idle → submitting → success. We swap
+       the inner DOM (label + icon) plus add classes the CSS hooks into for
+       spinner, color, and pop animation. */
+    function setIdleButton() {
+      submitBtn.classList.remove('is-submitting', 'is-success');
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = 'REQUEST ACCESS<span class="play-tri" aria-hidden="true"></span>';
+    }
+    function setLoadingButton(label) {
+      submitBtn.classList.remove('is-success');
+      submitBtn.classList.add('is-submitting');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `${label}<span class="spinner" aria-hidden="true"></span>`;
+    }
+    function setSuccessButton() {
+      submitBtn.classList.remove('is-submitting');
+      submitBtn.classList.add('is-success');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'RECEIVED<span class="check" aria-hidden="true">✓</span>';
+    }
     function setSubmitting(on) {
       submitting = on;
-      submitBtn.disabled = on;
+      if (on) setLoadingButton('VERIFYING');
+      else setIdleButton();
     }
     function isValidEmail(v) {
       return typeof v === 'string' && v.length > 0 && v.length <= 254 &&
@@ -532,6 +554,9 @@
     function onTurnstileVerified(token) {
       if (!pendingSubmit) return;
       pendingSubmit = false;
+      // Turnstile cleared — flip the loading copy so the user sees progress
+      // through the second leg (POST → server → Resend).
+      setLoadingButton('SUBMITTING');
       submitToApi(token);
     }
     function onTurnstileError() {
@@ -561,8 +586,7 @@
         .then(r => r.json().then(body => ({ status: r.status, body })))
         .then(({ status, body }) => {
           if (status === 200 && body && body.ok) {
-            submitBtn.innerHTML = 'RECEIVED ✓';
-            submitBtn.disabled = true;
+            setSuccessButton();
             clearError();
           } else {
             const msg = (body && body.error) ? body.error : 'Something went wrong. Please try again.';

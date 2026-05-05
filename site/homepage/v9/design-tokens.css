@@ -53,6 +53,11 @@
   --md-sys-color-secondary:                #6B4F2A;
   --md-sys-color-secondary-container:      rgba(107, 79, 42, 0.08);
 
+  /* Success — muted forest, tuned to fit the warm/archival palette.
+     Used for the access form's "received" state. */
+  --md-sys-color-success:                  #2D6B47;
+  --md-sys-color-on-success:               #F7F4ED;
+
   /* Inverse — dark "trace" register, used for trace section + footer */
   --md-sys-color-inverse-surface:          #100E0A;
   --md-sys-color-inverse-surface-2:        #1A1813;
@@ -161,4 +166,5 @@
   --accent:       var(--md-sys-color-primary);
   --accent-soft:  var(--md-sys-color-primary-container);
   --accent-glow:  var(--md-sys-color-primary-glow);
+  --success:      var(--md-sys-color-success);
 }
