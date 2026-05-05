@@ -1,0 +1,13 @@
+{
+  "name": "affetto-site",
+  "version": "0.9.0",
+  "private": true,
+  "type": "module",
+  "description": "Affetto early-access site. Static HTML + Vercel serverless functions for the access form.",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "resend": "^4.0.1"
+  }
+}

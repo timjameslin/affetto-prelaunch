@@ -1872,6 +1872,23 @@ img, svg { display: block; max-width: 100%; }
   border-color: transparent transparent transparent var(--paper);
   margin-left: 4px;
 }
+.field-submit[disabled] {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.field-error {
+  margin-top: 16px;
+  font-family: var(--md-sys-typescale-mono-family);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+/* Turnstile invisible widget — keep mounted but out of layout */
+#turnstile-widget { position: absolute; width: 0; height: 0; overflow: hidden; }
 
 /* ============================================================
    FOOTER — dark surface, mirrors trace section register

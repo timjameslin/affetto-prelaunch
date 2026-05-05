@@ -8,12 +8,18 @@ design synthesis handoff into a maintainable file structure.
 ```
 README.md                          This file
 site/                              ← Vercel "Root Directory" = site
+├── README.md                      Edit guide + env-var + header reference
 ├── index.html                     Production HTML (entry point)
+├── package.json                   resend dependency for serverless functions
+├── vercel.json                    Security headers (HSTS, CSP, …)
+├── api/                           Serverless functions (Vercel Node)
+│   ├── access.js                    POST /api/access  — form submission
+│   └── config.js                    GET  /api/config  — public Turnstile key
 └── homepage/v9/
     ├── design-tokens.css          All visual tokens
     ├── content.js                 All dynamic data
     ├── styles.css                 Component CSS
-    └── main.js                    Behavior
+    └── main.js                    Behavior (incl. Turnstile-protected submit)
 
 reference/                         (not deployed — design source of truth)
 ├── HANDOFF.md                     Engineer-facing spec
@@ -28,8 +34,14 @@ reference/                         (not deployed — design source of truth)
 - **Build Command:** none
 - **Output Directory:** none (Vercel serves `site/` directly)
 
-`site/index.html` is the entry point. All asset paths inside it are relative
-to `site/`, so no rewrites or `vercel.json` are required.
+`site/index.html` is the entry point. `site/vercel.json` adds security headers
+(HSTS, X-Frame-Options, CSP, …). `site/api/*` are Vercel Node serverless
+functions that handle form submission via Cloudflare Turnstile + Resend.
+
+**Required environment variables** (Vercel → Project → Settings → Environment
+Variables): `TURNSTILE_SECRET_KEY`, `NEXT_PUBLIC_TURNSTILE_SITE_KEY`,
+`RESEND_API_KEY`, `RESEND_AUDIENCE_ID`. Optional: `RESEND_FROM`, `NOTIFY_TO`.
+Full reference in `site/README.md`.
 
 ## How to edit
 

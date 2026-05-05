@@ -17,6 +17,11 @@
      then component styles (which reference the tokens). -->
 <link rel="stylesheet" href="homepage/v9/design-tokens.css">
 <link rel="stylesheet" href="homepage/v9/styles.css">
+
+<!-- Cloudflare Turnstile — invisible managed challenge for the access form.
+     Loads with explicit-render so main.js can wire the site key from
+     /api/config without hardcoding it. -->
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onTurnstileScriptLoad" async defer></script>
 </head>
 <body>
 
@@ -589,7 +594,9 @@
             <option value="other">Other</option>
           </select>
         </div>
+        <div id="turnstile-widget" aria-hidden="true"></div>
         <button type="submit" class="field-submit">REQUEST ACCESS<span class="play-tri"></span></button>
+        <p class="field-error" id="access-error" role="alert" hidden></p>
       </form>
     </div>
   </div>

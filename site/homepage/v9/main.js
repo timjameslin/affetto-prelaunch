@@ -465,17 +465,143 @@
     render();
   })();
 
-  /* ACCESS FORM — submit → RECEIVED state */
+  /* ACCESS FORM — Turnstile-protected submission to /api/access
+     Flow:
+       1. On page load, fetch /api/config for the public Turnstile site key
+       2. Render the Turnstile widget in invisible / explicit-execute mode
+       3. On form submit, validate email, call turnstile.execute(), wait for
+          the token via the registered callback, then POST to /api/access
+       4. On 200, show RECEIVED. On error, show message + re-enable submit. */
   (function() {
     const form = document.getElementById('access-form');
     if (!form) return;
+
+    const submitBtn = form.querySelector('.field-submit');
+    const emailInput = form.querySelector('#email-input');
+    const audienceInput = form.querySelector('#audience-select');
+    const widgetEl = document.getElementById('turnstile-widget');
+    const errorEl = document.getElementById('access-error');
+    if (!submitBtn || !emailInput || !widgetEl) return;
+
+    let turnstileWidgetId = null;
+    let turnstileSiteKey = null;
+    let pendingSubmit = false;
+    let submitting = false;
+
+    function showError(msg) {
+      if (!errorEl) return;
+      errorEl.textContent = msg;
+      errorEl.hidden = false;
+    }
+    function clearError() {
+      if (!errorEl) return;
+      errorEl.textContent = '';
+      errorEl.hidden = true;
+    }
+    function setSubmitting(on) {
+      submitting = on;
+      submitBtn.disabled = on;
+    }
+    function isValidEmail(v) {
+      return typeof v === 'string' && v.length > 0 && v.length <= 254 &&
+             /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    }
+
+    /* Turnstile script onload — defined on window so the global
+       <script ... onload=onTurnstileScriptLoad> callback finds it. */
+    window.onTurnstileScriptLoad = function() {
+      fetch('/api/config', { headers: { 'Accept': 'application/json' } })
+        .then(r => r.ok ? r.json() : Promise.reject(new Error('config fetch failed')))
+        .then(cfg => {
+          turnstileSiteKey = cfg.turnstileSiteKey || '';
+          if (!turnstileSiteKey || !window.turnstile) return;
+          turnstileWidgetId = window.turnstile.render(widgetEl, {
+            sitekey: turnstileSiteKey,
+            size: 'invisible',
+            execution: 'execute',
+            callback: onTurnstileVerified,
+            'error-callback': onTurnstileError,
+            'expired-callback': onTurnstileExpired,
+          });
+        })
+        .catch(err => {
+          console.error('Turnstile init failed', err);
+        });
+    };
+
+    function onTurnstileVerified(token) {
+      if (!pendingSubmit) return;
+      pendingSubmit = false;
+      submitToApi(token);
+    }
+    function onTurnstileError() {
+      pendingSubmit = false;
+      setSubmitting(false);
+      showError('VERIFICATION FAILED. PLEASE RETRY.');
+    }
+    function onTurnstileExpired() {
+      // Token expired before submit — refresh quietly. The next submit will
+      // execute() again to get a fresh token.
+      if (turnstileWidgetId !== null && window.turnstile) {
+        window.turnstile.reset(turnstileWidgetId);
+      }
+    }
+
+    function submitToApi(turnstileToken) {
+      const payload = {
+        email: emailInput.value.trim(),
+        audience: audienceInput ? audienceInput.value : '',
+        turnstileToken,
+      };
+      fetch('/api/access', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+        .then(r => r.json().then(body => ({ status: r.status, body })))
+        .then(({ status, body }) => {
+          if (status === 200 && body && body.ok) {
+            submitBtn.innerHTML = 'RECEIVED ✓';
+            submitBtn.disabled = true;
+            clearError();
+          } else {
+            const msg = (body && body.error) ? body.error : 'Something went wrong. Please try again.';
+            showError(msg.toUpperCase());
+            setSubmitting(false);
+            if (turnstileWidgetId !== null && window.turnstile) {
+              window.turnstile.reset(turnstileWidgetId);
+            }
+          }
+        })
+        .catch(err => {
+          console.error('access submit error', err);
+          showError('NETWORK ERROR. PLEASE TRY AGAIN.');
+          setSubmitting(false);
+          if (turnstileWidgetId !== null && window.turnstile) {
+            window.turnstile.reset(turnstileWidgetId);
+          }
+        });
+    }
+
     form.addEventListener('submit', e => {
       e.preventDefault();
-      const sub = form.querySelector('.field-submit');
-      if (!sub) return;
-      sub.innerHTML = 'RECEIVED ✓';
-      sub.disabled = true;
-      sub.style.opacity = '0.6';
+      if (submitting) return;
+      clearError();
+
+      const email = emailInput.value.trim();
+      if (!isValidEmail(email)) {
+        showError('PLEASE ENTER A VALID EMAIL ADDRESS.');
+        return;
+      }
+
+      if (turnstileWidgetId === null || !window.turnstile) {
+        showError('VERIFICATION NOT READY. PLEASE TRY AGAIN IN A MOMENT.');
+        return;
+      }
+
+      setSubmitting(true);
+      pendingSubmit = true;
+      window.turnstile.execute(turnstileWidgetId);
     });
   })();
 
