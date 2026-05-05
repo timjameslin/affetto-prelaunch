@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="version" content="0.9.0">
+<title>Affetto — AI-native operating system for dental</title>
+<meta name="description" content="A single AI engine running every workflow behind your practice — front desk, scheduling, billing, hiring, growth — whether you operate one location or fifty.">
+<meta name="theme-color" content="#F7F4ED">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FAFAF8'/%3E%3Cpath d='M16 6 L26 12 L26 22 L16 28 L6 22 L6 12 Z' fill='none' stroke='%2314130F' stroke-width='2'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- v0.9.0 — design tokens load first (Tim's editable visual surface),
+     then component styles (which reference the tokens). -->
+<link rel="stylesheet" href="homepage/v9/design-tokens.css">
+<link rel="stylesheet" href="homepage/v9/styles.css">
+</head>
+<body>
+
+<!-- ============================================================
+     MASTHEAD
+     ============================================================ -->
+<header class="masthead">
+  <div class="container">
+    <div class="masthead-inner">
+      <a href="#" class="brand">
+        <span class="brand-icon" aria-hidden="true">
+          <svg viewBox="607.5 0 272.6 263" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+            <polygon points="743.8,0 607.5,80.2 607.5,132.4 744.2,51.6 880.1,132.4 880.1,80.2"/>
+            <polygon points="814.6,147.1 769.3,172.9 795.5,188.7 752.8,213.8 688.6,179 779.6,128.3 742.5,104.5 607.5,184.4 743.8,263 880.1,184.4"/>
+          </svg>
+        </span>
+        <span class="wordmark">AFFETTO</span>
+      </a>
+      <div class="masthead-meta">
+        <span class="pip live"></span>
+        <span class="label">PHASE: PRE-LAUNCH — 2026</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============================================================
+     §01 / HERO
+     ============================================================ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+
+      <div>
+        <div class="eyebrow hero-eyebrow" data-reveal>
+          <span class="num">01</span>
+          <span class="sep"></span>
+          <span class="name">AI-NATIVE OPERATING SYSTEM FOR DENTAL.</span>
+        </div>
+
+        <h1 class="hero-headline" data-reveal>
+          You deliver the care. Affetto runs <span class="quiet">everything else.</span>
+        </h1>
+
+        <p class="hero-substance" data-reveal>
+          A single AI engine running every workflow behind your practice — front desk, scheduling, billing, hiring, growth — whether you operate one location or fifty.
+        </p>
+
+        <div class="hero-actions" data-reveal>
+          <a href="#access" class="cta">REQUEST EARLY ACCESS<span class="play-tri"></span></a>
+          <a href="#trace" class="cta-ghost">SEE THE ENGINE<span class="chevron"></span></a>
+        </div>
+      </div>
+
+      <div class="hero-stream" data-reveal aria-hidden="true">
+        <div class="stream-col floor">
+          <div class="stream-head">
+            <span class="label">PRACTICE FLOOR</span>
+            <span class="live-mark"><span class="pip live"></span>LIVE</span>
+          </div>
+          <div class="stream-body">
+            <div class="stream-rows" id="hero-floor-rows"></div>
+          </div>
+        </div>
+        <div class="stream-col agents">
+          <div class="stream-head">
+            <span class="label">AGENTS</span>
+            <span class="live-mark"><span class="pip live"></span>LIVE</span>
+          </div>
+          <div class="stream-body">
+            <div class="stream-rows" id="hero-agent-rows"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FULL-BLEED LIVE TRACE
+     ============================================================ -->
+<div class="trace-section-wrap">
+  <section class="trace-section" id="trace">
+    <div class="motion-bg" aria-hidden="true">
+      <div class="scan-sweep"></div>
+      <svg class="mesh" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice">
+        <!-- EDGES -->
+        <line x1="1420" y1="210" x2="1290" y2="75" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="17.9s" repeatCount="indefinite" begin="-11.4s" /><animate attributeName="x1" values="1420;1453;1420;1404;1420" dur="41.3s" repeatCount="indefinite" begin="-35.9s" /><animate attributeName="y1" values="210;199;204;216;210" dur="41.3s" repeatCount="indefinite" begin="-35.9s" /><animate attributeName="x2" values="1290;1310;1290;1280;1290" dur="30.3s" repeatCount="indefinite" begin="-4.2s" /><animate attributeName="y2" values="75;41;58;92;75" dur="30.3s" repeatCount="indefinite" begin="-4.2s" /></line>
+        <line x1="81" y1="461" x2="99" y2="470" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="17.5s" repeatCount="indefinite" begin="-4.5s" /><animate attributeName="x1" values="81;47;81;98;81" dur="48.0s" repeatCount="indefinite" begin="-47.7s" /><animate attributeName="y1" values="461;498;479;443;461" dur="48.0s" repeatCount="indefinite" begin="-47.7s" /><animate attributeName="x2" values="99;92;99;103;99" dur="38.5s" repeatCount="indefinite" begin="-4.9s" /><animate attributeName="y2" values="470;441;455;485;470" dur="38.5s" repeatCount="indefinite" begin="-4.9s" /></line>
+        <line x1="81" y1="461" x2="28" y2="333" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="9.6s" repeatCount="indefinite" begin="-10.0s" /><animate attributeName="x1" values="81;47;81;98;81" dur="48.0s" repeatCount="indefinite" begin="-47.7s" /><animate attributeName="y1" values="461;498;479;443;461" dur="48.0s" repeatCount="indefinite" begin="-47.7s" /><animate attributeName="x2" values="28;2;28;41;28" dur="37.6s" repeatCount="indefinite" begin="-20.9s" /><animate attributeName="y2" values="333;350;341;325;333" dur="37.6s" repeatCount="indefinite" begin="-20.9s" /></line>
+        <line x1="305" y1="282" x2="116" y2="263" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="16.0s" repeatCount="indefinite" begin="-4.9s" /><animate attributeName="x1" values="305;300;305;308;305" dur="37.7s" repeatCount="indefinite" begin="-28.5s" /><animate attributeName="y1" values="282;271;276;288;282" dur="37.7s" repeatCount="indefinite" begin="-28.5s" /><animate attributeName="x2" values="116;151;116;99;116" dur="38.4s" repeatCount="indefinite" begin="-35.3s" /><animate attributeName="y2" values="263;253;258;268;263" dur="38.4s" repeatCount="indefinite" begin="-35.3s" /></line>
+        <line x1="900" y1="341" x2="855" y2="328" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="9.6s" repeatCount="indefinite" begin="-6.9s" /><animate attributeName="x1" values="900;933;900;884;900" dur="34.9s" repeatCount="indefinite" begin="-20.8s" /><animate attributeName="y1" values="341;316;328;354;341" dur="34.9s" repeatCount="indefinite" begin="-20.8s" /><animate attributeName="x2" values="855;839;855;863;855" dur="39.9s" repeatCount="indefinite" begin="-3.1s" /><animate attributeName="y2" values="328;360;344;312;328" dur="39.9s" repeatCount="indefinite" begin="-3.1s" /></line>
+        <line x1="900" y1="341" x2="931" y2="279" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="17.6s" repeatCount="indefinite" begin="-5.6s" /><animate attributeName="x1" values="900;933;900;884;900" dur="34.9s" repeatCount="indefinite" begin="-20.8s" /><animate attributeName="y1" values="341;316;328;354;341" dur="34.9s" repeatCount="indefinite" begin="-20.8s" /><animate attributeName="x2" values="931;901;931;946;931" dur="42.7s" repeatCount="indefinite" begin="-10.7s" /><animate attributeName="y2" values="279;291;285;273;279" dur="42.7s" repeatCount="indefinite" begin="-10.7s" /></line>
+        <line x1="1155" y1="158" x2="1146" y2="261" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="15.7s" repeatCount="indefinite" begin="-8.6s" /><animate attributeName="x1" values="1155;1161;1155;1152;1155" dur="38.7s" repeatCount="indefinite" begin="-11.4s" /><animate attributeName="y1" values="158;174;166;150;158" dur="38.7s" repeatCount="indefinite" begin="-11.4s" /><animate attributeName="x2" values="1146;1168;1146;1135;1146" dur="45.7s" repeatCount="indefinite" begin="-32.1s" /><animate attributeName="y2" values="261;251;256;266;261" dur="45.7s" repeatCount="indefinite" begin="-32.1s" /></line>
+        <line x1="1155" y1="158" x2="1230" y2="59" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="16.3s" repeatCount="indefinite" begin="-0.3s" /><animate attributeName="x1" values="1155;1161;1155;1152;1155" dur="38.7s" repeatCount="indefinite" begin="-11.4s" /><animate attributeName="y1" values="158;174;166;150;158" dur="38.7s" repeatCount="indefinite" begin="-11.4s" /><animate attributeName="x2" values="1230;1225;1230;1233;1230" dur="42.6s" repeatCount="indefinite" begin="-14.5s" /><animate attributeName="y2" values="59;93;76;42;59" dur="42.6s" repeatCount="indefinite" begin="-14.5s" /></line>
+        <line x1="749" y1="279" x2="738" y2="227" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="17.1s" repeatCount="indefinite" begin="-5.8s" /><animate attributeName="x1" values="749;746;749;751;749" dur="33.2s" repeatCount="indefinite" begin="-9.3s" /><animate attributeName="y1" values="279;297;288;270;279" dur="33.2s" repeatCount="indefinite" begin="-9.3s" /><animate attributeName="x2" values="738;778;738;718;738" dur="35.5s" repeatCount="indefinite" begin="-25.4s" /><animate attributeName="y2" values="227;267;247;207;227" dur="35.5s" repeatCount="indefinite" begin="-25.4s" /></line>
+        <line x1="749" y1="279" x2="832" y2="326" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="13.0s" repeatCount="indefinite" begin="-1.5s" /><animate attributeName="x1" values="749;746;749;751;749" dur="33.2s" repeatCount="indefinite" begin="-9.3s" /><animate attributeName="y1" values="279;297;288;270;279" dur="33.2s" repeatCount="indefinite" begin="-9.3s" /><animate attributeName="x2" values="832;801;832;848;832" dur="34.0s" repeatCount="indefinite" begin="-3.0s" /><animate attributeName="y2" values="326;355;340;312;326" dur="34.0s" repeatCount="indefinite" begin="-3.0s" /></line>
+        <line x1="1146" y1="261" x2="1115" y2="322" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="8.1s" repeatCount="indefinite" begin="-1.6s" /><animate attributeName="x1" values="1146;1168;1146;1135;1146" dur="45.7s" repeatCount="indefinite" begin="-32.1s" /><animate attributeName="y1" values="261;251;256;266;261" dur="45.7s" repeatCount="indefinite" begin="-32.1s" /><animate attributeName="x2" values="1115;1081;1115;1132;1115" dur="34.5s" repeatCount="indefinite" begin="-30.8s" /><animate attributeName="y2" values="322;288;305;339;322" dur="34.5s" repeatCount="indefinite" begin="-30.8s" /></line>
+        <line x1="1146" y1="261" x2="1255" y2="263" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="8.8s" repeatCount="indefinite" begin="-10.8s" /><animate attributeName="x1" values="1146;1168;1146;1135;1146" dur="45.7s" repeatCount="indefinite" begin="-32.1s" /><animate attributeName="y1" values="261;251;256;266;261" dur="45.7s" repeatCount="indefinite" begin="-32.1s" /><animate attributeName="x2" values="1255;1297;1255;1234;1255" dur="32.2s" repeatCount="indefinite" begin="-19.9s" /><animate attributeName="y2" values="263;286;274;252;263" dur="32.2s" repeatCount="indefinite" begin="-19.9s" /></line>
+        <line x1="818" y1="22" x2="770" y2="56" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="13.7s" repeatCount="indefinite" begin="-8.7s" /><animate attributeName="x1" values="818;860;818;797;818" dur="46.7s" repeatCount="indefinite" begin="-2.0s" /><animate attributeName="y1" values="22;36;29;15;22" dur="46.7s" repeatCount="indefinite" begin="-2.0s" /><animate attributeName="x2" values="770;720;770;795;770" dur="34.7s" repeatCount="indefinite" begin="-17.2s" /><animate attributeName="y2" values="56;56;56;56;56" dur="34.7s" repeatCount="indefinite" begin="-17.2s" /></line>
+        <line x1="818" y1="22" x2="891" y2="59" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="8.6s" repeatCount="indefinite" begin="-8.5s" /><animate attributeName="x1" values="818;860;818;797;818" dur="46.7s" repeatCount="indefinite" begin="-2.0s" /><animate attributeName="y1" values="22;36;29;15;22" dur="46.7s" repeatCount="indefinite" begin="-2.0s" /><animate attributeName="x2" values="891;881;891;896;891" dur="37.2s" repeatCount="indefinite" begin="-2.6s" /><animate attributeName="y2" values="59;69;64;54;59" dur="37.2s" repeatCount="indefinite" begin="-2.6s" /></line>
+        <line x1="931" y1="279" x2="891" y2="240" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="17.1s" repeatCount="indefinite" begin="-8.3s" /><animate attributeName="x1" values="931;901;931;946;931" dur="42.7s" repeatCount="indefinite" begin="-10.7s" /><animate attributeName="y1" values="279;291;285;273;279" dur="42.7s" repeatCount="indefinite" begin="-10.7s" /><animate attributeName="x2" values="891;874;891;900;891" dur="39.8s" repeatCount="indefinite" begin="-14.2s" /><animate attributeName="y2" values="240;254;247;233;240" dur="39.8s" repeatCount="indefinite" begin="-14.2s" /></line>
+        <line x1="931" y1="279" x2="855" y2="328" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="8.3s" repeatCount="indefinite" begin="-6.4s" /><animate attributeName="x1" values="931;901;931;946;931" dur="42.7s" repeatCount="indefinite" begin="-10.7s" /><animate attributeName="y1" values="279;291;285;273;279" dur="42.7s" repeatCount="indefinite" begin="-10.7s" /><animate attributeName="x2" values="855;839;855;863;855" dur="39.9s" repeatCount="indefinite" begin="-3.1s" /><animate attributeName="y2" values="328;360;344;312;328" dur="39.9s" repeatCount="indefinite" begin="-3.1s" /></line>
+        <line x1="738" y1="227" x2="832" y2="326" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="15.8s" repeatCount="indefinite" begin="-8.2s" /><animate attributeName="x1" values="738;778;738;718;738" dur="35.5s" repeatCount="indefinite" begin="-25.4s" /><animate attributeName="y1" values="227;267;247;207;227" dur="35.5s" repeatCount="indefinite" begin="-25.4s" /><animate attributeName="x2" values="832;801;832;848;832" dur="34.0s" repeatCount="indefinite" begin="-3.0s" /><animate attributeName="y2" values="326;355;340;312;326" dur="34.0s" repeatCount="indefinite" begin="-3.0s" /></line>
+        <line x1="738" y1="227" x2="891" y2="240" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="11.0s" repeatCount="indefinite" begin="-7.4s" /><animate attributeName="x1" values="738;778;738;718;738" dur="35.5s" repeatCount="indefinite" begin="-25.4s" /><animate attributeName="y1" values="227;267;247;207;227" dur="35.5s" repeatCount="indefinite" begin="-25.4s" /><animate attributeName="x2" values="891;874;891;900;891" dur="39.8s" repeatCount="indefinite" begin="-14.2s" /><animate attributeName="y2" values="240;254;247;233;240" dur="39.8s" repeatCount="indefinite" begin="-14.2s" /></line>
+        <line x1="1255" y1="263" x2="1115" y2="322" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="14.5s" repeatCount="indefinite" begin="-8.8s" /><animate attributeName="x1" values="1255;1297;1255;1234;1255" dur="32.2s" repeatCount="indefinite" begin="-19.9s" /><animate attributeName="y1" values="263;286;274;252;263" dur="32.2s" repeatCount="indefinite" begin="-19.9s" /><animate attributeName="x2" values="1115;1081;1115;1132;1115" dur="34.5s" repeatCount="indefinite" begin="-30.8s" /><animate attributeName="y2" values="322;288;305;339;322" dur="34.5s" repeatCount="indefinite" begin="-30.8s" /></line>
+        <line x1="1230" y1="59" x2="1290" y2="75" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="12.3s" repeatCount="indefinite" begin="-9.0s" /><animate attributeName="x1" values="1230;1225;1230;1233;1230" dur="42.6s" repeatCount="indefinite" begin="-14.5s" /><animate attributeName="y1" values="59;93;76;42;59" dur="42.6s" repeatCount="indefinite" begin="-14.5s" /><animate attributeName="x2" values="1290;1310;1290;1280;1290" dur="30.3s" repeatCount="indefinite" begin="-4.2s" /><animate attributeName="y2" values="75;41;58;92;75" dur="30.3s" repeatCount="indefinite" begin="-4.2s" /></line>
+        <line x1="99" y1="470" x2="28" y2="333" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="10.3s" repeatCount="indefinite" begin="-0.3s" /><animate attributeName="x1" values="99;92;99;103;99" dur="38.5s" repeatCount="indefinite" begin="-4.9s" /><animate attributeName="y1" values="470;441;455;485;470" dur="38.5s" repeatCount="indefinite" begin="-4.9s" /><animate attributeName="x2" values="28;2;28;41;28" dur="37.6s" repeatCount="indefinite" begin="-20.9s" /><animate attributeName="y2" values="333;350;341;325;333" dur="37.6s" repeatCount="indefinite" begin="-20.9s" /></line>
+        <line x1="855" y1="328" x2="832" y2="326" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="8.9s" repeatCount="indefinite" begin="-3.8s" /><animate attributeName="x1" values="855;839;855;863;855" dur="39.9s" repeatCount="indefinite" begin="-3.1s" /><animate attributeName="y1" values="328;360;344;312;328" dur="39.9s" repeatCount="indefinite" begin="-3.1s" /><animate attributeName="x2" values="832;801;832;848;832" dur="34.0s" repeatCount="indefinite" begin="-3.0s" /><animate attributeName="y2" values="326;355;340;312;326" dur="34.0s" repeatCount="indefinite" begin="-3.0s" /></line>
+        <line x1="855" y1="328" x2="891" y2="240" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="13.0s" repeatCount="indefinite" begin="-6.9s" /><animate attributeName="x1" values="855;839;855;863;855" dur="39.9s" repeatCount="indefinite" begin="-3.1s" /><animate attributeName="y1" values="328;360;344;312;328" dur="39.9s" repeatCount="indefinite" begin="-3.1s" /><animate attributeName="x2" values="891;874;891;900;891" dur="39.8s" repeatCount="indefinite" begin="-14.2s" /><animate attributeName="y2" values="240;254;247;233;240" dur="39.8s" repeatCount="indefinite" begin="-14.2s" /></line>
+        <line x1="770" y1="56" x2="891" y2="59" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="16.9s" repeatCount="indefinite" begin="-10.9s" /><animate attributeName="x1" values="770;720;770;795;770" dur="34.7s" repeatCount="indefinite" begin="-17.2s" /><animate attributeName="y1" values="56;56;56;56;56" dur="34.7s" repeatCount="indefinite" begin="-17.2s" /><animate attributeName="x2" values="891;881;891;896;891" dur="37.2s" repeatCount="indefinite" begin="-2.6s" /><animate attributeName="y2" values="59;69;64;54;59" dur="37.2s" repeatCount="indefinite" begin="-2.6s" /></line>
+        <line x1="770" y1="56" x2="636" y2="23" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="14.5s" repeatCount="indefinite" begin="-7.3s" /><animate attributeName="x1" values="770;720;770;795;770" dur="34.7s" repeatCount="indefinite" begin="-17.2s" /><animate attributeName="y1" values="56;56;56;56;56" dur="34.7s" repeatCount="indefinite" begin="-17.2s" /><animate attributeName="x2" values="636;653;636;628;636" dur="38.6s" repeatCount="indefinite" begin="-10.7s" /><animate attributeName="y2" values="23;-14;4;42;23" dur="38.6s" repeatCount="indefinite" begin="-10.7s" /></line>
+        <line x1="627" y1="52" x2="615" y2="54" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="13.2s" repeatCount="indefinite" begin="-11.9s" /><animate attributeName="x1" values="627;625;627;628;627" dur="42.3s" repeatCount="indefinite" begin="-6.6s" /><animate attributeName="y1" values="52;76;64;40;52" dur="42.3s" repeatCount="indefinite" begin="-6.6s" /><animate attributeName="x2" values="615;609;615;618;615" dur="30.0s" repeatCount="indefinite" begin="-14.7s" /><animate attributeName="y2" values="54;30;42;66;54" dur="30.0s" repeatCount="indefinite" begin="-14.7s" /></line>
+        <line x1="627" y1="52" x2="636" y2="23" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="10.4s" repeatCount="indefinite" begin="-6.1s" /><animate attributeName="x1" values="627;625;627;628;627" dur="42.3s" repeatCount="indefinite" begin="-6.6s" /><animate attributeName="y1" values="52;76;64;40;52" dur="42.3s" repeatCount="indefinite" begin="-6.6s" /><animate attributeName="x2" values="636;653;636;628;636" dur="38.6s" repeatCount="indefinite" begin="-10.7s" /><animate attributeName="y2" values="23;-14;4;42;23" dur="38.6s" repeatCount="indefinite" begin="-10.7s" /></line>
+        <line x1="891" y1="240" x2="910" y2="160" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="8.1s" repeatCount="indefinite" begin="-4.4s" /><animate attributeName="x1" values="891;874;891;900;891" dur="39.8s" repeatCount="indefinite" begin="-14.2s" /><animate attributeName="y1" values="240;254;247;233;240" dur="39.8s" repeatCount="indefinite" begin="-14.2s" /><animate attributeName="x2" values="910;878;910;926;910" dur="30.2s" repeatCount="indefinite" begin="-24.9s" /><animate attributeName="y2" values="160;126;143;177;160" dur="30.2s" repeatCount="indefinite" begin="-24.9s" /></line>
+        <line x1="891" y1="240" x2="900" y2="341" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="9.5s" repeatCount="indefinite" begin="-5.6s" /><animate attributeName="x1" values="891;874;891;900;891" dur="39.8s" repeatCount="indefinite" begin="-14.2s" /><animate attributeName="y1" values="240;254;247;233;240" dur="39.8s" repeatCount="indefinite" begin="-14.2s" /><animate attributeName="x2" values="900;933;900;884;900" dur="34.9s" repeatCount="indefinite" begin="-20.8s" /><animate attributeName="y2" values="341;316;328;354;341" dur="34.9s" repeatCount="indefinite" begin="-20.8s" /></line>
+        <line x1="891" y1="59" x2="910" y2="160" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="11.5s" repeatCount="indefinite" begin="-1.6s" /><animate attributeName="x1" values="891;881;891;896;891" dur="37.2s" repeatCount="indefinite" begin="-2.6s" /><animate attributeName="y1" values="59;69;64;54;59" dur="37.2s" repeatCount="indefinite" begin="-2.6s" /><animate attributeName="x2" values="910;878;910;926;910" dur="30.2s" repeatCount="indefinite" begin="-24.9s" /><animate attributeName="y2" values="160;126;143;177;160" dur="30.2s" repeatCount="indefinite" begin="-24.9s" /></line>
+        <line x1="891" y1="59" x2="891" y2="240" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="11.4s" repeatCount="indefinite" begin="-2.7s" /><animate attributeName="x1" values="891;881;891;896;891" dur="37.2s" repeatCount="indefinite" begin="-2.6s" /><animate attributeName="y1" values="59;69;64;54;59" dur="37.2s" repeatCount="indefinite" begin="-2.6s" /><animate attributeName="x2" values="891;874;891;900;891" dur="39.8s" repeatCount="indefinite" begin="-14.2s" /><animate attributeName="y2" values="240;254;247;233;240" dur="39.8s" repeatCount="indefinite" begin="-14.2s" /></line>
+        <line x1="28" y1="333" x2="116" y2="263" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="10.8s" repeatCount="indefinite" begin="-1.1s" /><animate attributeName="x1" values="28;2;28;41;28" dur="37.6s" repeatCount="indefinite" begin="-20.9s" /><animate attributeName="y1" values="333;350;341;325;333" dur="37.6s" repeatCount="indefinite" begin="-20.9s" /><animate attributeName="x2" values="116;151;116;99;116" dur="38.4s" repeatCount="indefinite" begin="-35.3s" /><animate attributeName="y2" values="263;253;258;268;263" dur="38.4s" repeatCount="indefinite" begin="-35.3s" /></line>
+        <line x1="28" y1="333" x2="82" y2="191" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="15.1s" repeatCount="indefinite" begin="-1.5s" /><animate attributeName="x1" values="28;2;28;41;28" dur="37.6s" repeatCount="indefinite" begin="-20.9s" /><animate attributeName="y1" values="333;350;341;325;333" dur="37.6s" repeatCount="indefinite" begin="-20.9s" /><animate attributeName="x2" values="82;125;82;61;82" dur="30.1s" repeatCount="indefinite" begin="-21.6s" /><animate attributeName="y2" values="191;152;171;211;191" dur="30.1s" repeatCount="indefinite" begin="-21.6s" /></line>
+        <line x1="910" y1="160" x2="931" y2="279" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="9.8s" repeatCount="indefinite" begin="-1.3s" /><animate attributeName="x1" values="910;878;910;926;910" dur="30.2s" repeatCount="indefinite" begin="-24.9s" /><animate attributeName="y1" values="160;126;143;177;160" dur="30.2s" repeatCount="indefinite" begin="-24.9s" /><animate attributeName="x2" values="931;901;931;946;931" dur="42.7s" repeatCount="indefinite" begin="-10.7s" /><animate attributeName="y2" values="279;291;285;273;279" dur="42.7s" repeatCount="indefinite" begin="-10.7s" /></line>
+        <line x1="910" y1="160" x2="818" y2="22" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="13.5s" repeatCount="indefinite" begin="-1.7s" /><animate attributeName="x1" values="910;878;910;926;910" dur="30.2s" repeatCount="indefinite" begin="-24.9s" /><animate attributeName="y1" values="160;126;143;177;160" dur="30.2s" repeatCount="indefinite" begin="-24.9s" /><animate attributeName="x2" values="818;860;818;797;818" dur="46.7s" repeatCount="indefinite" begin="-2.0s" /><animate attributeName="y2" values="22;36;29;15;22" dur="46.7s" repeatCount="indefinite" begin="-2.0s" /></line>
+        <line x1="615" y1="54" x2="636" y2="23" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="15.4s" repeatCount="indefinite" begin="-0.3s" /><animate attributeName="x1" values="615;609;615;618;615" dur="30.0s" repeatCount="indefinite" begin="-14.7s" /><animate attributeName="y1" values="54;30;42;66;54" dur="30.0s" repeatCount="indefinite" begin="-14.7s" /><animate attributeName="x2" values="636;653;636;628;636" dur="38.6s" repeatCount="indefinite" begin="-10.7s" /><animate attributeName="y2" values="23;-14;4;42;23" dur="38.6s" repeatCount="indefinite" begin="-10.7s" /></line>
+        <line x1="615" y1="54" x2="770" y2="56" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="12.6s" repeatCount="indefinite" begin="-4.3s" /><animate attributeName="x1" values="615;609;615;618;615" dur="30.0s" repeatCount="indefinite" begin="-14.7s" /><animate attributeName="y1" values="54;30;42;66;54" dur="30.0s" repeatCount="indefinite" begin="-14.7s" /><animate attributeName="x2" values="770;720;770;795;770" dur="34.7s" repeatCount="indefinite" begin="-17.2s" /><animate attributeName="y2" values="56;56;56;56;56" dur="34.7s" repeatCount="indefinite" begin="-17.2s" /></line>
+        <line x1="1115" y1="322" x2="1155" y2="158" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="13.8s" repeatCount="indefinite" begin="-6.9s" /><animate attributeName="x1" values="1115;1081;1115;1132;1115" dur="34.5s" repeatCount="indefinite" begin="-30.8s" /><animate attributeName="y1" values="322;288;305;339;322" dur="34.5s" repeatCount="indefinite" begin="-30.8s" /><animate attributeName="x2" values="1155;1161;1155;1152;1155" dur="38.7s" repeatCount="indefinite" begin="-11.4s" /><animate attributeName="y2" values="158;174;166;150;158" dur="38.7s" repeatCount="indefinite" begin="-11.4s" /></line>
+        <line x1="1115" y1="322" x2="931" y2="279" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="16.0s" repeatCount="indefinite" begin="-6.2s" /><animate attributeName="x1" values="1115;1081;1115;1132;1115" dur="34.5s" repeatCount="indefinite" begin="-30.8s" /><animate attributeName="y1" values="322;288;305;339;322" dur="34.5s" repeatCount="indefinite" begin="-30.8s" /><animate attributeName="x2" values="931;901;931;946;931" dur="42.7s" repeatCount="indefinite" begin="-10.7s" /><animate attributeName="y2" values="279;291;285;273;279" dur="42.7s" repeatCount="indefinite" begin="-10.7s" /></line>
+        <line x1="1290" y1="75" x2="1155" y2="158" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="8.7s" repeatCount="indefinite" begin="-10.3s" /><animate attributeName="x1" values="1290;1310;1290;1280;1290" dur="30.3s" repeatCount="indefinite" begin="-4.2s" /><animate attributeName="y1" values="75;41;58;92;75" dur="30.3s" repeatCount="indefinite" begin="-4.2s" /><animate attributeName="x2" values="1155;1161;1155;1152;1155" dur="38.7s" repeatCount="indefinite" begin="-11.4s" /><animate attributeName="y2" values="158;174;166;150;158" dur="38.7s" repeatCount="indefinite" begin="-11.4s" /></line>
+        <line x1="832" y1="326" x2="900" y2="341" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="13.3s" repeatCount="indefinite" begin="-3.4s" /><animate attributeName="x1" values="832;801;832;848;832" dur="34.0s" repeatCount="indefinite" begin="-3.0s" /><animate attributeName="y1" values="326;355;340;312;326" dur="34.0s" repeatCount="indefinite" begin="-3.0s" /><animate attributeName="x2" values="900;933;900;884;900" dur="34.9s" repeatCount="indefinite" begin="-20.8s" /><animate attributeName="y2" values="341;316;328;354;341" dur="34.9s" repeatCount="indefinite" begin="-20.8s" /></line>
+        <line x1="832" y1="326" x2="891" y2="240" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="11.8s" repeatCount="indefinite" begin="-1.5s" /><animate attributeName="x1" values="832;801;832;848;832" dur="34.0s" repeatCount="indefinite" begin="-3.0s" /><animate attributeName="y1" values="326;355;340;312;326" dur="34.0s" repeatCount="indefinite" begin="-3.0s" /><animate attributeName="x2" values="891;874;891;900;891" dur="39.8s" repeatCount="indefinite" begin="-14.2s" /><animate attributeName="y2" values="240;254;247;233;240" dur="39.8s" repeatCount="indefinite" begin="-14.2s" /></line>
+        <line x1="636" y1="23" x2="818" y2="22" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="10.1s" repeatCount="indefinite" begin="-3.9s" /><animate attributeName="x1" values="636;653;636;628;636" dur="38.6s" repeatCount="indefinite" begin="-10.7s" /><animate attributeName="y1" values="23;-14;4;42;23" dur="38.6s" repeatCount="indefinite" begin="-10.7s" /><animate attributeName="x2" values="818;860;818;797;818" dur="46.7s" repeatCount="indefinite" begin="-2.0s" /><animate attributeName="y2" values="22;36;29;15;22" dur="46.7s" repeatCount="indefinite" begin="-2.0s" /></line>
+        <!-- POINTS -->
+        <circle class="accent" cx="1420" cy="210" r="1.8" opacity="0.53"><animate attributeName="cx" values="1420;1453;1420;1404;1420" dur="41.3s" repeatCount="indefinite" begin="-35.9s" /><animate attributeName="cy" values="210;199;204;216;210" dur="41.3s" repeatCount="indefinite" begin="-35.9s" /></circle>
+        <circle class="accent" cx="81" cy="461" r="1.8" opacity="0.57"><animate attributeName="cx" values="81;47;81;98;81" dur="48.0s" repeatCount="indefinite" begin="-47.7s" /><animate attributeName="cy" values="461;498;479;443;461" dur="48.0s" repeatCount="indefinite" begin="-47.7s" /></circle>
+        <circle class="accent" cx="305" cy="282" r="1.8" opacity="0.51"><animate attributeName="cx" values="305;300;305;308;305" dur="37.7s" repeatCount="indefinite" begin="-28.5s" /><animate attributeName="cy" values="282;271;276;288;282" dur="37.7s" repeatCount="indefinite" begin="-28.5s" /></circle>
+        <circle class="accent" cx="900" cy="341" r="1.8" opacity="0.53"><animate attributeName="cx" values="900;933;900;884;900" dur="34.9s" repeatCount="indefinite" begin="-20.8s" /><animate attributeName="cy" values="341;316;328;354;341" dur="34.9s" repeatCount="indefinite" begin="-20.8s" /></circle>
+        <circle cx="1155" cy="158" r="1.5" opacity="0.34"><animate attributeName="cx" values="1155;1161;1155;1152;1155" dur="38.7s" repeatCount="indefinite" begin="-11.4s" /><animate attributeName="cy" values="158;174;166;150;158" dur="38.7s" repeatCount="indefinite" begin="-11.4s" /></circle>
+        <circle cx="749" cy="279" r="1.5" opacity="0.48"><animate attributeName="cx" values="749;746;749;751;749" dur="33.2s" repeatCount="indefinite" begin="-9.3s" /><animate attributeName="cy" values="279;297;288;270;279" dur="33.2s" repeatCount="indefinite" begin="-9.3s" /></circle>
+        <circle cx="1146" cy="261" r="1.5" opacity="0.33"><animate attributeName="cx" values="1146;1168;1146;1135;1146" dur="45.7s" repeatCount="indefinite" begin="-32.1s" /><animate attributeName="cy" values="261;251;256;266;261" dur="45.7s" repeatCount="indefinite" begin="-32.1s" /></circle>
+        <circle cx="818" cy="22" r="1.5" opacity="0.33"><animate attributeName="cx" values="818;860;818;797;818" dur="46.7s" repeatCount="indefinite" begin="-2.0s" /><animate attributeName="cy" values="22;36;29;15;22" dur="46.7s" repeatCount="indefinite" begin="-2.0s" /></circle>
+        <circle cx="931" cy="279" r="1.5" opacity="0.45"><animate attributeName="cx" values="931;901;931;946;931" dur="42.7s" repeatCount="indefinite" begin="-10.7s" /><animate attributeName="cy" values="279;291;285;273;279" dur="42.7s" repeatCount="indefinite" begin="-10.7s" /></circle>
+        <circle cx="738" cy="227" r="1.5" opacity="0.33"><animate attributeName="cx" values="738;778;738;718;738" dur="35.5s" repeatCount="indefinite" begin="-25.4s" /><animate attributeName="cy" values="227;267;247;207;227" dur="35.5s" repeatCount="indefinite" begin="-25.4s" /></circle>
+        <circle cx="1255" cy="263" r="1.5" opacity="0.42"><animate attributeName="cx" values="1255;1297;1255;1234;1255" dur="32.2s" repeatCount="indefinite" begin="-19.9s" /><animate attributeName="cy" values="263;286;274;252;263" dur="32.2s" repeatCount="indefinite" begin="-19.9s" /></circle>
+        <circle cx="1230" cy="59" r="1.5" opacity="0.36"><animate attributeName="cx" values="1230;1225;1230;1233;1230" dur="42.6s" repeatCount="indefinite" begin="-14.5s" /><animate attributeName="cy" values="59;93;76;42;59" dur="42.6s" repeatCount="indefinite" begin="-14.5s" /></circle>
+        <circle cx="99" cy="470" r="1.5" opacity="0.36"><animate attributeName="cx" values="99;92;99;103;99" dur="38.5s" repeatCount="indefinite" begin="-4.9s" /><animate attributeName="cy" values="470;441;455;485;470" dur="38.5s" repeatCount="indefinite" begin="-4.9s" /></circle>
+        <circle cx="855" cy="328" r="1.5" opacity="0.39"><animate attributeName="cx" values="855;839;855;863;855" dur="39.9s" repeatCount="indefinite" begin="-3.1s" /><animate attributeName="cy" values="328;360;344;312;328" dur="39.9s" repeatCount="indefinite" begin="-3.1s" /></circle>
+        <circle cx="770" cy="56" r="1.5" opacity="0.49"><animate attributeName="cx" values="770;720;770;795;770" dur="34.7s" repeatCount="indefinite" begin="-17.2s" /><animate attributeName="cy" values="56;56;56;56;56" dur="34.7s" repeatCount="indefinite" begin="-17.2s" /></circle>
+        <circle cx="627" cy="52" r="1.5" opacity="0.33"><animate attributeName="cx" values="627;625;627;628;627" dur="42.3s" repeatCount="indefinite" begin="-6.6s" /><animate attributeName="cy" values="52;76;64;40;52" dur="42.3s" repeatCount="indefinite" begin="-6.6s" /></circle>
+        <circle cx="891" cy="240" r="1.5" opacity="0.35"><animate attributeName="cx" values="891;874;891;900;891" dur="39.8s" repeatCount="indefinite" begin="-14.2s" /><animate attributeName="cy" values="240;254;247;233;240" dur="39.8s" repeatCount="indefinite" begin="-14.2s" /></circle>
+        <circle cx="891" cy="59" r="1.5" opacity="0.31"><animate attributeName="cx" values="891;881;891;896;891" dur="37.2s" repeatCount="indefinite" begin="-2.6s" /><animate attributeName="cy" values="59;69;64;54;59" dur="37.2s" repeatCount="indefinite" begin="-2.6s" /></circle>
+        <circle cx="28" cy="333" r="1.5" opacity="0.37"><animate attributeName="cx" values="28;2;28;41;28" dur="37.6s" repeatCount="indefinite" begin="-20.9s" /><animate attributeName="cy" values="333;350;341;325;333" dur="37.6s" repeatCount="indefinite" begin="-20.9s" /></circle>
+        <circle cx="910" cy="160" r="1.5" opacity="0.34"><animate attributeName="cx" values="910;878;910;926;910" dur="30.2s" repeatCount="indefinite" begin="-24.9s" /><animate attributeName="cy" values="160;126;143;177;160" dur="30.2s" repeatCount="indefinite" begin="-24.9s" /></circle>
+        <circle cx="615" cy="54" r="1.5" opacity="0.42"><animate attributeName="cx" values="615;609;615;618;615" dur="30.0s" repeatCount="indefinite" begin="-14.7s" /><animate attributeName="cy" values="54;30;42;66;54" dur="30.0s" repeatCount="indefinite" begin="-14.7s" /></circle>
+        <circle cx="1115" cy="322" r="1.5" opacity="0.41"><animate attributeName="cx" values="1115;1081;1115;1132;1115" dur="34.5s" repeatCount="indefinite" begin="-30.8s" /><animate attributeName="cy" values="322;288;305;339;322" dur="34.5s" repeatCount="indefinite" begin="-30.8s" /></circle>
+        <circle cx="277" cy="25" r="1.5" opacity="0.31"><animate attributeName="cx" values="277;258;277;287;277" dur="29.8s" repeatCount="indefinite" begin="-27.8s" /><animate attributeName="cy" values="25;4;14;36;25" dur="29.8s" repeatCount="indefinite" begin="-27.8s" /></circle>
+        <circle cx="116" cy="263" r="1.5" opacity="0.39"><animate attributeName="cx" values="116;151;116;99;116" dur="38.4s" repeatCount="indefinite" begin="-35.3s" /><animate attributeName="cy" values="263;253;258;268;263" dur="38.4s" repeatCount="indefinite" begin="-35.3s" /></circle>
+        <circle cx="1290" cy="75" r="1.5" opacity="0.41"><animate attributeName="cx" values="1290;1310;1290;1280;1290" dur="30.3s" repeatCount="indefinite" begin="-4.2s" /><animate attributeName="cy" values="75;41;58;92;75" dur="30.3s" repeatCount="indefinite" begin="-4.2s" /></circle>
+        <circle cx="832" cy="326" r="1.5" opacity="0.31"><animate attributeName="cx" values="832;801;832;848;832" dur="34.0s" repeatCount="indefinite" begin="-3.0s" /><animate attributeName="cy" values="326;355;340;312;326" dur="34.0s" repeatCount="indefinite" begin="-3.0s" /></circle>
+        <circle cx="82" cy="191" r="1.5" opacity="0.47"><animate attributeName="cx" values="82;125;82;61;82" dur="30.1s" repeatCount="indefinite" begin="-21.6s" /><animate attributeName="cy" values="191;152;171;211;191" dur="30.1s" repeatCount="indefinite" begin="-21.6s" /></circle>
+        <circle cx="636" cy="23" r="1.5" opacity="0.35"><animate attributeName="cx" values="636;653;636;628;636" dur="38.6s" repeatCount="indefinite" begin="-10.7s" /><animate attributeName="cy" values="23;-14;4;42;23" dur="38.6s" repeatCount="indefinite" begin="-10.7s" /></circle>
+      </svg>
+    </div>
+    <div class="container-wide">
+
+      <div class="eyebrow trace-eyebrow on-dark" data-reveal>
+        <span class="live-mark"><span class="pip live"></span>LIVE</span>
+        <span class="sep"></span>
+        <span class="name">THE ENGINE, IN MOTION.</span>
+      </div>
+
+      <div class="trace-head" data-reveal>
+        <h2 class="trace-title">
+          One entity, end-to-end. <span class="quiet">No human in the loop.</span>
+        </h2>
+        <div class="trace-counter">
+          <span class="label">Trace</span>
+          <span id="trace-num">01</span><span class="of"> / 05</span>
+        </div>
+      </div>
+
+      <div class="trace-entity" id="trace-entity-name">
+        <span class="label">PATIENT</span>
+        Mrs. Okafor · 14 month recall · re-engagement
+      </div>
+
+      <div class="trace-flow">
+        <div class="trace-line"></div>
+        <div class="trace-progress" id="trace-progress"></div>
+        <div class="trace-stations" id="trace-stations"></div>
+      </div>
+
+      <div class="trace-foot">
+        <div class="caption">
+          <span class="em">A patient, end-to-end. Six seconds.</span> The same engine moves a claim, fills a gap on the schedule, onboards a new provider, and closes a procurement loop. One substrate. Nine agents. End to end.
+        </div>
+        <div class="indicators" id="trace-indicators">
+          <span class="indicator active" data-trace="patient"></span>
+          <span class="indicator" data-trace="claim"></span>
+          <span class="indicator" data-trace="schedule"></span>
+          <span class="indicator" data-trace="provider"></span>
+          <span class="indicator" data-trace="procurement"></span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</div>
+
+<!-- ============================================================
+     §02 / WHAT IT DOES — featured agent + tile grid
+     ============================================================ -->
+<section class="sec" id="agents">
+  <div class="container">
+    <div class="eyebrow sec-eyebrow" data-reveal>
+      <span class="num">02</span>
+      <span class="sep"></span>
+      <span class="name">WHAT IT DOES.</span>
+    </div>
+
+    <h2 class="sec-title" data-reveal>
+      Nine agents. <span class="accent">One substrate.</span> <span class="quiet">Always coordinating.</span>
+    </h2>
+
+    <p class="sec-lede" data-reveal>
+      Each agent runs its own workflow but writes to a shared canonical substrate — so a recall booked by Patient automatically threads through Schedule, Treatment, Revenue, and Finance without anyone reaching across systems.
+    </p>
+
+    <div class="agents-showcase" data-reveal>
+
+      <div class="featured" id="featured-panel">
+        <div class="featured-left">
+          <div class="featured-meta">
+            <span class="ix" id="featured-ix">01</span>
+            <span class="of">/</span>
+            <span class="of" id="featured-total">09</span>
+            <span class="of">·</span>
+            <span id="featured-tagline">AGENT</span>
+          </div>
+          <div class="featured-code" id="featured-code">TRT</div>
+          <div class="featured-name" id="featured-name">Treatment</div>
+          <div class="featured-desc" id="featured-desc">Plans, presentations, case acceptance.</div>
+
+          <div class="featured-bridge">
+            <div class="bridge-line in" id="bridge-in">
+              <span class="label">FROM FLOOR</span>
+              <span class="text" id="bridge-in-text">consent signed · routed</span>
+            </div>
+            <div class="bridge-line out" id="bridge-out">
+              <span class="label">TO BUSINESS</span>
+              <span class="text" id="bridge-out-text">case acceptance · <code>72%</code></span>
+            </div>
+          </div>
+
+          <div class="featured-progress" id="featured-progress"></div>
+        </div>
+
+        <div class="featured-right">
+          <div class="activity-head">
+            <span class="label">ACTIVITY</span>
+            <span class="live-mark"><span class="pip live"></span>LIVE</span>
+          </div>
+          <div class="activity-log">
+            <div class="activity-rows" id="activity-rows"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tile-grid" id="tile-grid"></div>
+
+      <div class="agents-legend">
+        <span class="key">
+          <span class="swatch"></span>
+          When the featured agent acts, downstream agents pulse — a single substrate handing off in real time.
+        </span>
+        <span class="nav-hint">TAP A TILE TO FOCUS →</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     §03 / SYSTEM
+     ============================================================ -->
+<section class="sec" id="system">
+  <div class="container">
+    <div class="eyebrow sec-eyebrow" data-reveal>
+      <span class="num">03</span>
+      <span class="sep"></span>
+      <span class="name">THE SYSTEM.</span>
+    </div>
+
+    <h2 class="sec-title" data-reveal>
+      One engine. Any practice management system. <span class="quiet">Any scale.</span>
+    </h2>
+
+    <p class="sec-lede" data-reveal>
+      A single execution engine reading from a canonical data contract, indifferent to which practice management system feeds it. Switch sources without restarting agents. Add new ones without rebuilding.
+    </p>
+
+    <div class="system-diagram" id="arch-diagram" data-reveal>
+      <div class="layer" data-layer="0">
+        <div class="layer-num">L0</div>
+        <div>
+          <div class="layer-name">Source</div>
+          <span class="layer-zone">EXTERNAL / ANY VENDOR</span>
+        </div>
+        <div class="layer-body" id="l0-tags">
+          <span class="tag active" data-source="Dentrix"><span class="dot"></span>Dentrix</span>
+          <span class="tag" data-source="Eaglesoft"><span class="dot"></span>Eaglesoft</span>
+          <span class="tag" data-source="Open Dental"><span class="dot"></span>Open Dental</span>
+          <span class="tag" data-source="Curve Dental"><span class="dot"></span>Curve Dental</span>
+          <span class="tag muted">+ any other</span>
+        </div>
+      </div>
+
+      <div class="layer" data-layer="1">
+        <div class="layer-num">L1</div>
+        <div>
+          <div class="layer-name">Connectors</div>
+          <span class="layer-zone">AFFETTO / INFRASTRUCTURE</span>
+        </div>
+        <div class="layer-body" id="l1-tags">
+          <span class="tag active" data-adapter="Dentrix"><span class="dot"></span>adapter / Dentrix</span>
+          <span class="tag" data-adapter="Eaglesoft"><span class="dot"></span>adapter / Eaglesoft</span>
+          <span class="tag" data-adapter="Open Dental"><span class="dot"></span>adapter / Open Dental</span>
+          <span class="tag muted">+ n adapters</span>
+        </div>
+      </div>
+
+      <div class="layer keystone" data-layer="2">
+        <div class="layer-num">L2</div>
+        <div>
+          <div class="layer-name">Contract</div>
+          <span class="layer-zone">KEYSTONE / CANONICAL</span>
+        </div>
+        <div class="layer-body" id="schema-body">
+          <span class="schema-version">SCHEMA <span class="v">v0.4.1</span></span>
+          <div class="schema" id="schema-entities">
+            <span class="schema-item"><span class="name" data-key="patient">patient</span><span class="type">entity</span></span>
+            <span class="schema-item"><span class="name" data-key="appointment">appointment</span><span class="type">event</span></span>
+            <span class="schema-item"><span class="name" data-key="claim">claim</span><span class="type">document</span></span>
+            <span class="schema-item"><span class="name" data-key="production">production</span><span class="type">ledger</span></span>
+            <span class="schema-item"><span class="name" data-key="payer">payer</span><span class="type">party</span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="layer" data-layer="3">
+        <div class="layer-num">L3</div>
+        <div>
+          <div class="layer-name">Engine</div>
+          <span class="layer-zone">EXECUTION / 9 AGENTS</span>
+        </div>
+        <div class="layer-body">
+          <div class="codes">
+            <span class="code">TRT</span>
+            <span class="code">RCM</span>
+            <span class="code">FIN</span>
+            <span class="code">PAT</span>
+            <span class="code">SCH</span>
+            <span class="code">CMP</span>
+            <span class="code">PPL</span>
+            <span class="code">MKT</span>
+            <span class="code">PRC</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="source-block" data-reveal>
+      <div class="source-row">
+        <span class="label">ACTIVE SOURCE</span>
+        <span class="name" id="active-source-name">Dentrix</span>
+        <span class="status live" id="source-status">
+          <span class="pip live"></span>
+          <span id="source-status-text">STABLE</span>
+        </span>
+      </div>
+      <div class="source-tags" id="source-tags"></div>
+      <div class="source-custom" id="source-custom">
+        <input type="text" placeholder="Enter system name…" id="source-custom-value">
+        <button type="button" id="source-custom-submit">USE</button>
+      </div>
+      <p class="source-foot">
+        Affetto is source-agnostic. Connect to any practice management system, EHR, billing platform, imaging system, or custom internal tool. The list above is illustrative — the architecture supports n+1 sources.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     MANIFESTO PULL-QUOTE
+     ============================================================ -->
+<section class="manifesto">
+  <div class="manifesto-inner" data-reveal>
+    <div class="manifesto-mark">"</div>
+    <p class="manifesto-quote">
+      The next decade of dentistry will be defined less by the care delivered <span class="quiet">and more by the operations that make care possible at scale.</span>
+    </p>
+    <div class="manifesto-attr">
+      <span class="who">AFFETTO</span>
+      <span class="sep"></span>
+      <span>FOUNDING THESIS · 2026</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     §04 / FORCES
+     ============================================================ -->
+<section class="sec">
+  <div class="container">
+    <div class="eyebrow sec-eyebrow" data-reveal>
+      <span class="num">04</span>
+      <span class="sep"></span>
+      <span class="name">OPERATING ENVIRONMENT.</span>
+    </div>
+
+    <h2 class="sec-title" data-reveal>
+      Five forces, <span class="accent">converging</span>.
+    </h2>
+
+    <p class="sec-lede" data-reveal>
+      Five forces are reshaping dental at once — and converging on the same problem: the operational layer between the practice floor and the business that runs it.
+    </p>
+
+    <div class="forces-list">
+      <div class="force" data-reveal>
+        <span class="force-num">01</span>
+        <div class="force-content">
+          <span class="force-name">Consolidation</span>
+          <p class="force-line">A hundred thousand practices change hands this decade. Integration, not acquisition, is the binding constraint.</p>
+        </div>
+        <div class="force-stat">
+          <span class="v">~100,000</span>
+          practices changing hands this decade
+          <span class="src">ADA HPI, 2024</span>
+        </div>
+      </div>
+
+      <div class="force" data-reveal>
+        <span class="force-num">02</span>
+        <div class="force-content">
+          <span class="force-name">Restructuring</span>
+          <p class="force-line">More than a third of dentists intend to exit insurance networks. Each transition is a six-month operational rebuild.</p>
+        </div>
+        <div class="force-stat">
+          <span class="v">~33%</span>
+          of dentists intend to exit PPO networks
+          <span class="src">ADA</span>
+        </div>
+      </div>
+
+      <div class="force" data-reveal>
+        <span class="force-num">03</span>
+        <div class="force-content">
+          <span class="force-name">Labor</span>
+          <p class="force-line">The cost of running a practice has outpaced the cost of the care delivered inside it. Coordination is where the pressure lands.</p>
+        </div>
+        <div class="force-stat">
+          <span class="v">Operations &gt; care</span>
+          ops cost has overtaken care cost
+        </div>
+      </div>
+
+      <div class="force" data-reveal>
+        <span class="force-num">04</span>
+        <div class="force-content">
+          <span class="force-name">Autonomy</span>
+          <p class="force-line">Software has moved from interface to actor. Foundation models can now perform the work, not only describe it.</p>
+        </div>
+        <div class="force-stat">
+          <span class="v">Interface → actor</span>
+          software now performs, not describes
+        </div>
+      </div>
+
+      <div class="force" data-reveal>
+        <span class="force-num">05</span>
+        <div class="force-content">
+          <span class="force-name">Fragmentation</span>
+          <p class="force-line">The tooling layer has multiplied without unifying. The bottleneck is no longer features — it is connective tissue.</p>
+        </div>
+        <div class="force-stat">
+          <span class="v">Connective tissue</span>
+          the bottleneck is no longer features
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     §05 / OUTCOMES
+     ============================================================ -->
+<section class="sec">
+  <div class="container">
+    <div class="eyebrow sec-eyebrow" data-reveal>
+      <span class="num">05</span>
+      <span class="sep"></span>
+      <span class="name">OUTCOMES.</span>
+    </div>
+
+    <h2 class="sec-title" data-reveal>
+      What it <span class="accent">produces</span>.
+    </h2>
+
+    <div class="outcomes-list">
+      <div class="outcome" data-reveal>
+        <span class="outcome-num">01</span>
+        <div class="outcome-body">
+          <h3 class="outcome-stmt">Run multiple locations with the team of one.</h3>
+          <p class="outcome-line">Operational headcount no longer scales linearly with footprint. The same engine that runs one practice runs ten.</p>
+        </div>
+      </div>
+
+      <div class="outcome" data-reveal>
+        <span class="outcome-num">02</span>
+        <div class="outcome-body">
+          <h3 class="outcome-stmt">Acquire and integrate without rebuilding operations.</h3>
+          <p class="outcome-line">The same engine spans diligence, transition, and steady-state. New practices go live in 21 days, not 6 months.</p>
+        </div>
+      </div>
+
+      <div class="outcome" data-reveal>
+        <span class="outcome-num">03</span>
+        <div class="outcome-body">
+          <h3 class="outcome-stmt">Real-time visibility from chair to corporate.</h3>
+          <p class="outcome-line">Practice operations and business operations on the same data substrate. No reporting cycle. No spreadsheet truth wars.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     §06 / ACCESS
+     ============================================================ -->
+<section class="sec" id="access">
+  <div class="container">
+    <div class="eyebrow sec-eyebrow" data-reveal>
+      <span class="num">06</span>
+      <span class="sep"></span>
+      <span class="name">ACCESS.</span>
+    </div>
+
+    <div class="access-grid">
+      <div data-reveal>
+        <h2 class="access-headline">Request <span class="accent">early access</span>.</h2>
+        <p class="access-subhead">
+          Open to practice owners, group operators, DSOs, and institutional investors. We are taking on a small number of partners ahead of public release.
+        </p>
+        <p class="access-closing">Founders read every reply.</p>
+      </div>
+
+      <form id="access-form" data-reveal>
+        <div class="field">
+          <label class="field-label" for="email-input">EMAIL ADDRESS</label>
+          <input class="field-input" type="email" id="email-input" placeholder="you@practice.com" required>
+        </div>
+        <div class="field">
+          <label class="field-label" for="audience-select">I'M A… <span class="opt">(OPTIONAL)</span></label>
+          <select class="field-select" id="audience-select">
+            <option value="">Select…</option>
+            <option value="practice">Practice owner</option>
+            <option value="group">Group operator (2–10 locations)</option>
+            <option value="dso">DSO operator (10+ locations)</option>
+            <option value="investor">Institutional investor</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <button type="submit" class="field-submit">REQUEST ACCESS<span class="play-tri"></span></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="motion-bg" aria-hidden="true">
+    <div class="scan-sweep"></div>
+    <svg class="mesh" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 300" preserveAspectRatio="xMidYMid slice">
+      <!-- EDGES -->
+      <line x1="1207" y1="59" x2="1175" y2="51" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="20.9s" repeatCount="indefinite" begin="-0.3s" /><animate attributeName="x1" values="1207;1228;1207;1197;1207" dur="47.1s" repeatCount="indefinite" begin="-38.3s" /><animate attributeName="y1" values="59;88;73;45;59" dur="47.1s" repeatCount="indefinite" begin="-38.3s" /><animate attributeName="x2" values="1175;1145;1175;1190;1175" dur="42.7s" repeatCount="indefinite" begin="-6.2s" /><animate attributeName="y2" values="51;37;44;58;51" dur="42.7s" repeatCount="indefinite" begin="-6.2s" /></line>
+      <line x1="1207" y1="59" x2="1246" y2="73" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="14.3s" repeatCount="indefinite" begin="-12.0s" /><animate attributeName="x1" values="1207;1228;1207;1197;1207" dur="47.1s" repeatCount="indefinite" begin="-38.3s" /><animate attributeName="y1" values="59;88;73;45;59" dur="47.1s" repeatCount="indefinite" begin="-38.3s" /><animate attributeName="x2" values="1246;1211;1246;1264;1246" dur="57.7s" repeatCount="indefinite" begin="-31.5s" /><animate attributeName="y2" values="73;88;80;66;73" dur="57.7s" repeatCount="indefinite" begin="-31.5s" /></line>
+      <line x1="1175" y1="51" x2="1246" y2="73" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="19.0s" repeatCount="indefinite" begin="-1.7s" /><animate attributeName="x1" values="1175;1145;1175;1190;1175" dur="42.7s" repeatCount="indefinite" begin="-6.2s" /><animate attributeName="y1" values="51;37;44;58;51" dur="42.7s" repeatCount="indefinite" begin="-6.2s" /><animate attributeName="x2" values="1246;1211;1246;1264;1246" dur="57.7s" repeatCount="indefinite" begin="-31.5s" /><animate attributeName="y2" values="73;88;80;66;73" dur="57.7s" repeatCount="indefinite" begin="-31.5s" /></line>
+      <line x1="1175" y1="51" x2="1023" y2="65" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="18.9s" repeatCount="indefinite" begin="-9.0s" /><animate attributeName="x1" values="1175;1145;1175;1190;1175" dur="42.7s" repeatCount="indefinite" begin="-6.2s" /><animate attributeName="y1" values="51;37;44;58;51" dur="42.7s" repeatCount="indefinite" begin="-6.2s" /><animate attributeName="x2" values="1023;995;1023;1037;1023" dur="55.6s" repeatCount="indefinite" begin="-45.5s" /><animate attributeName="y2" values="65;84;74;56;65" dur="55.6s" repeatCount="indefinite" begin="-45.5s" /></line>
+      <line x1="634" y1="126" x2="599" y2="163" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="17.6s" repeatCount="indefinite" begin="-15.1s" /><animate attributeName="x1" values="634;649;634;627;634" dur="50.4s" repeatCount="indefinite" begin="-0.6s" /><animate attributeName="y1" values="126;155;140;112;126" dur="50.4s" repeatCount="indefinite" begin="-0.6s" /><animate attributeName="x2" values="599;586;599;606;599" dur="56.5s" repeatCount="indefinite" begin="-4.8s" /><animate attributeName="y2" values="163;139;151;175;163" dur="56.5s" repeatCount="indefinite" begin="-4.8s" /></line>
+      <line x1="634" y1="126" x2="734" y2="46" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="19.6s" repeatCount="indefinite" begin="-9.6s" /><animate attributeName="x1" values="634;649;634;627;634" dur="50.4s" repeatCount="indefinite" begin="-0.6s" /><animate attributeName="y1" values="126;155;140;112;126" dur="50.4s" repeatCount="indefinite" begin="-0.6s" /><animate attributeName="x2" values="734;760;734;721;734" dur="49.5s" repeatCount="indefinite" begin="-38.7s" /><animate attributeName="y2" values="46;68;57;35;46" dur="49.5s" repeatCount="indefinite" begin="-38.7s" /></line>
+      <line x1="202" y1="77" x2="264" y2="150" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="19.2s" repeatCount="indefinite" begin="-7.9s" /><animate attributeName="x1" values="202;178;202;214;202" dur="50.2s" repeatCount="indefinite" begin="-31.5s" /><animate attributeName="y1" values="77;51;64;90;77" dur="50.2s" repeatCount="indefinite" begin="-31.5s" /><animate attributeName="x2" values="264;243;264;275;264" dur="59.9s" repeatCount="indefinite" begin="-37.4s" /><animate attributeName="y2" values="150;171;160;140;150" dur="59.9s" repeatCount="indefinite" begin="-37.4s" /></line>
+      <line x1="202" y1="77" x2="52" y2="101" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="16.6s" repeatCount="indefinite" begin="-13.1s" /><animate attributeName="x1" values="202;178;202;214;202" dur="50.2s" repeatCount="indefinite" begin="-31.5s" /><animate attributeName="y1" values="77;51;64;90;77" dur="50.2s" repeatCount="indefinite" begin="-31.5s" /><animate attributeName="x2" values="52;35;52;61;52" dur="39.2s" repeatCount="indefinite" begin="-17.1s" /><animate attributeName="y2" values="101;74;87;115;101" dur="39.2s" repeatCount="indefinite" begin="-17.1s" /></line>
+      <line x1="52" y1="101" x2="264" y2="150" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="17.4s" repeatCount="indefinite" begin="-6.0s" /><animate attributeName="x1" values="52;35;52;61;52" dur="39.2s" repeatCount="indefinite" begin="-17.1s" /><animate attributeName="y1" values="101;74;87;115;101" dur="39.2s" repeatCount="indefinite" begin="-17.1s" /><animate attributeName="x2" values="264;243;264;275;264" dur="59.9s" repeatCount="indefinite" begin="-37.4s" /><animate attributeName="y2" values="150;171;160;140;150" dur="59.9s" repeatCount="indefinite" begin="-37.4s" /></line>
+      <line x1="384" y1="229" x2="264" y2="150" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="10.2s" repeatCount="indefinite" begin="-12.6s" /><animate attributeName="x1" values="384;354;384;399;384" dur="48.7s" repeatCount="indefinite" begin="-25.0s" /><animate attributeName="y1" values="229;250;239;219;229" dur="48.7s" repeatCount="indefinite" begin="-25.0s" /><animate attributeName="x2" values="264;243;264;275;264" dur="59.9s" repeatCount="indefinite" begin="-37.4s" /><animate attributeName="y2" values="150;171;160;140;150" dur="59.9s" repeatCount="indefinite" begin="-37.4s" /></line>
+      <line x1="384" y1="229" x2="202" y2="77" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="14.1s" repeatCount="indefinite" begin="-6.9s" /><animate attributeName="x1" values="384;354;384;399;384" dur="48.7s" repeatCount="indefinite" begin="-25.0s" /><animate attributeName="y1" values="229;250;239;219;229" dur="48.7s" repeatCount="indefinite" begin="-25.0s" /><animate attributeName="x2" values="202;178;202;214;202" dur="50.2s" repeatCount="indefinite" begin="-31.5s" /><animate attributeName="y2" values="77;51;64;90;77" dur="50.2s" repeatCount="indefinite" begin="-31.5s" /></line>
+      <line x1="734" y1="46" x2="883" y2="91" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="13.5s" repeatCount="indefinite" begin="-8.9s" /><animate attributeName="x1" values="734;760;734;721;734" dur="49.5s" repeatCount="indefinite" begin="-38.7s" /><animate attributeName="y1" values="46;68;57;35;46" dur="49.5s" repeatCount="indefinite" begin="-38.7s" /><animate attributeName="x2" values="883;843;883;903;883" dur="49.5s" repeatCount="indefinite" begin="-12.1s" /><animate attributeName="y2" values="91;101;96;86;91" dur="49.5s" repeatCount="indefinite" begin="-12.1s" /></line>
+      <line x1="734" y1="46" x2="599" y2="163" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="14.8s" repeatCount="indefinite" begin="-13.3s" /><animate attributeName="x1" values="734;760;734;721;734" dur="49.5s" repeatCount="indefinite" begin="-38.7s" /><animate attributeName="y1" values="46;68;57;35;46" dur="49.5s" repeatCount="indefinite" begin="-38.7s" /><animate attributeName="x2" values="599;586;599;606;599" dur="56.5s" repeatCount="indefinite" begin="-4.8s" /><animate attributeName="y2" values="163;139;151;175;163" dur="56.5s" repeatCount="indefinite" begin="-4.8s" /></line>
+      <line x1="893" y1="176" x2="883" y2="91" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="17.1s" repeatCount="indefinite" begin="-8.9s" /><animate attributeName="x1" values="893;906;893;887;893" dur="43.4s" repeatCount="indefinite" begin="-12.2s" /><animate attributeName="y1" values="176;165;170;182;176" dur="43.4s" repeatCount="indefinite" begin="-12.2s" /><animate attributeName="x2" values="883;843;883;903;883" dur="49.5s" repeatCount="indefinite" begin="-12.1s" /><animate attributeName="y2" values="91;101;96;86;91" dur="49.5s" repeatCount="indefinite" begin="-12.1s" /></line>
+      <line x1="893" y1="176" x2="998" y2="139" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="19.4s" repeatCount="indefinite" begin="-7.0s" /><animate attributeName="x1" values="893;906;893;887;893" dur="43.4s" repeatCount="indefinite" begin="-12.2s" /><animate attributeName="y1" values="176;165;170;182;176" dur="43.4s" repeatCount="indefinite" begin="-12.2s" /><animate attributeName="x2" values="998;1019;998;988;998" dur="56.5s" repeatCount="indefinite" begin="-7.1s" /><animate attributeName="y2" values="139;130;134;144;139" dur="56.5s" repeatCount="indefinite" begin="-7.1s" /></line>
+      <line x1="1246" y1="73" x2="1023" y2="65" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="16.4s" repeatCount="indefinite" begin="-12.0s" /><animate attributeName="x1" values="1246;1211;1246;1264;1246" dur="57.7s" repeatCount="indefinite" begin="-31.5s" /><animate attributeName="y1" values="73;88;80;66;73" dur="57.7s" repeatCount="indefinite" begin="-31.5s" /><animate attributeName="x2" values="1023;995;1023;1037;1023" dur="55.6s" repeatCount="indefinite" begin="-45.5s" /><animate attributeName="y2" values="65;84;74;56;65" dur="55.6s" repeatCount="indefinite" begin="-45.5s" /></line>
+      <line x1="998" y1="139" x2="1023" y2="65" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="18.7s" repeatCount="indefinite" begin="-11.9s" /><animate attributeName="x1" values="998;1019;998;988;998" dur="56.5s" repeatCount="indefinite" begin="-7.1s" /><animate attributeName="y1" values="139;130;134;144;139" dur="56.5s" repeatCount="indefinite" begin="-7.1s" /><animate attributeName="x2" values="1023;995;1023;1037;1023" dur="55.6s" repeatCount="indefinite" begin="-45.5s" /><animate attributeName="y2" values="65;84;74;56;65" dur="55.6s" repeatCount="indefinite" begin="-45.5s" /></line>
+      <line x1="998" y1="139" x2="883" y2="91" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="20.7s" repeatCount="indefinite" begin="-8.9s" /><animate attributeName="x1" values="998;1019;998;988;998" dur="56.5s" repeatCount="indefinite" begin="-7.1s" /><animate attributeName="y1" values="139;130;134;144;139" dur="56.5s" repeatCount="indefinite" begin="-7.1s" /><animate attributeName="x2" values="883;843;883;903;883" dur="49.5s" repeatCount="indefinite" begin="-12.1s" /><animate attributeName="y2" values="91;101;96;86;91" dur="49.5s" repeatCount="indefinite" begin="-12.1s" /></line>
+      <line x1="1023" y1="65" x2="883" y2="91" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="16.7s" repeatCount="indefinite" begin="-3.0s" /><animate attributeName="x1" values="1023;995;1023;1037;1023" dur="55.6s" repeatCount="indefinite" begin="-45.5s" /><animate attributeName="y1" values="65;84;74;56;65" dur="55.6s" repeatCount="indefinite" begin="-45.5s" /><animate attributeName="x2" values="883;843;883;903;883" dur="49.5s" repeatCount="indefinite" begin="-12.1s" /><animate attributeName="y2" values="91;101;96;86;91" dur="49.5s" repeatCount="indefinite" begin="-12.1s" /></line>
+      <line x1="1023" y1="65" x2="893" y2="176" stroke="rgba(232,227,213, 0.10)" stroke-width="0.5" opacity="0"><animate attributeName="opacity" values="0;0;0.5;0" dur="12.9s" repeatCount="indefinite" begin="-7.0s" /><animate attributeName="x1" values="1023;995;1023;1037;1023" dur="55.6s" repeatCount="indefinite" begin="-45.5s" /><animate attributeName="y1" values="65;84;74;56;65" dur="55.6s" repeatCount="indefinite" begin="-45.5s" /><animate attributeName="x2" values="893;906;893;887;893" dur="43.4s" repeatCount="indefinite" begin="-12.2s" /><animate attributeName="y2" values="176;165;170;182;176" dur="43.4s" repeatCount="indefinite" begin="-12.2s" /></line>
+      <!-- POINTS -->
+      <circle class="accent" cx="1207" cy="59" r="1.8" opacity="0.51"><animate attributeName="cx" values="1207;1228;1207;1197;1207" dur="47.1s" repeatCount="indefinite" begin="-38.3s" /><animate attributeName="cy" values="59;88;73;45;59" dur="47.1s" repeatCount="indefinite" begin="-38.3s" /></circle>
+      <circle class="accent" cx="1175" cy="51" r="1.8" opacity="0.41"><animate attributeName="cx" values="1175;1145;1175;1190;1175" dur="42.7s" repeatCount="indefinite" begin="-6.2s" /><animate attributeName="cy" values="51;37;44;58;51" dur="42.7s" repeatCount="indefinite" begin="-6.2s" /></circle>
+      <circle cx="634" cy="126" r="1.5" opacity="0.38"><animate attributeName="cx" values="634;649;634;627;634" dur="50.4s" repeatCount="indefinite" begin="-0.6s" /><animate attributeName="cy" values="126;155;140;112;126" dur="50.4s" repeatCount="indefinite" begin="-0.6s" /></circle>
+      <circle cx="202" cy="77" r="1.5" opacity="0.31"><animate attributeName="cx" values="202;178;202;214;202" dur="50.2s" repeatCount="indefinite" begin="-31.5s" /><animate attributeName="cy" values="77;51;64;90;77" dur="50.2s" repeatCount="indefinite" begin="-31.5s" /></circle>
+      <circle cx="52" cy="101" r="1.5" opacity="0.45"><animate attributeName="cx" values="52;35;52;61;52" dur="39.2s" repeatCount="indefinite" begin="-17.1s" /><animate attributeName="cy" values="101;74;87;115;101" dur="39.2s" repeatCount="indefinite" begin="-17.1s" /></circle>
+      <circle cx="384" cy="229" r="1.5" opacity="0.27"><animate attributeName="cx" values="384;354;384;399;384" dur="48.7s" repeatCount="indefinite" begin="-25.0s" /><animate attributeName="cy" values="229;250;239;219;229" dur="48.7s" repeatCount="indefinite" begin="-25.0s" /></circle>
+      <circle cx="734" cy="46" r="1.5" opacity="0.28"><animate attributeName="cx" values="734;760;734;721;734" dur="49.5s" repeatCount="indefinite" begin="-38.7s" /><animate attributeName="cy" values="46;68;57;35;46" dur="49.5s" repeatCount="indefinite" begin="-38.7s" /></circle>
+      <circle cx="893" cy="176" r="1.5" opacity="0.37"><animate attributeName="cx" values="893;906;893;887;893" dur="43.4s" repeatCount="indefinite" begin="-12.2s" /><animate attributeName="cy" values="176;165;170;182;176" dur="43.4s" repeatCount="indefinite" begin="-12.2s" /></circle>
+      <circle cx="599" cy="163" r="1.5" opacity="0.26"><animate attributeName="cx" values="599;586;599;606;599" dur="56.5s" repeatCount="indefinite" begin="-4.8s" /><animate attributeName="cy" values="163;139;151;175;163" dur="56.5s" repeatCount="indefinite" begin="-4.8s" /></circle>
+      <circle cx="264" cy="150" r="1.5" opacity="0.27"><animate attributeName="cx" values="264;243;264;275;264" dur="59.9s" repeatCount="indefinite" begin="-37.4s" /><animate attributeName="cy" values="150;171;160;140;150" dur="59.9s" repeatCount="indefinite" begin="-37.4s" /></circle>
+      <circle cx="1246" cy="73" r="1.5" opacity="0.28"><animate attributeName="cx" values="1246;1211;1246;1264;1246" dur="57.7s" repeatCount="indefinite" begin="-31.5s" /><animate attributeName="cy" values="73;88;80;66;73" dur="57.7s" repeatCount="indefinite" begin="-31.5s" /></circle>
+      <circle cx="998" cy="139" r="1.5" opacity="0.39"><animate attributeName="cx" values="998;1019;998;988;998" dur="56.5s" repeatCount="indefinite" begin="-7.1s" /><animate attributeName="cy" values="139;130;134;144;139" dur="56.5s" repeatCount="indefinite" begin="-7.1s" /></circle>
+      <circle cx="1023" cy="65" r="1.5" opacity="0.34"><animate attributeName="cx" values="1023;995;1023;1037;1023" dur="55.6s" repeatCount="indefinite" begin="-45.5s" /><animate attributeName="cy" values="65;84;74;56;65" dur="55.6s" repeatCount="indefinite" begin="-45.5s" /></circle>
+      <circle cx="883" cy="91" r="1.5" opacity="0.28"><animate attributeName="cx" values="883;843;883;903;883" dur="49.5s" repeatCount="indefinite" begin="-12.1s" /><animate attributeName="cy" values="91;101;96;86;91" dur="49.5s" repeatCount="indefinite" begin="-12.1s" /></circle>
+    </svg>
+  </div>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-icon" aria-hidden="true">
+          <svg viewBox="607.5 0 272.6 263" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+            <polygon points="743.8,0 607.5,80.2 607.5,132.4 744.2,51.6 880.1,132.4 880.1,80.2"/>
+            <polygon points="814.6,147.1 769.3,172.9 795.5,188.7 752.8,213.8 688.6,179 779.6,128.3 742.5,104.5 607.5,184.4 743.8,263 880.1,184.4"/>
+          </svg>
+        </span>
+        <span class="wordmark">AFFETTO</span>
+      </div>
+      <div class="footer-col">
+        <span class="label">CONTACT</span>
+        <a href="mailto:partners@affetto.io">partners@affetto.io</a><br>
+        LOS ANGELES, CA
+      </div>
+      <div class="footer-col">
+        <span class="label">2026</span>
+        CONFIDENTIAL · PRELAUNCH<br>
+        SOC 2 IN PROGRESS · HIPAA-COMPLIANT
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- v0.9.0 load order — content.js first (sets window.AFFETTO),
+     then main.js (reads the data and binds to the DOM). -->
+<script src="homepage/v9/content.js"></script>
+<script src="homepage/v9/main.js"></script>
+</body>
+</html>
