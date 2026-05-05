@@ -1187,14 +1187,21 @@ img, svg { display: block; max-width: 100%; }
   background: linear-gradient(0deg, var(--paper-2) 0%, rgba(241, 237, 227, 0) 100%);
 }
 
+/* Pin activity rows absolutely inside the (position: relative) .activity-log
+   so row turnover (a 6th row briefly co-existing with 5 during the 800ms
+   fade-out, or a row wrapping to 2 lines) doesn't grow the parent and
+   reflow the page below the §02 section on mobile. The .activity-log
+   already has overflow: hidden + the top/bottom gradient mask pseudo-
+   elements, so the visual is unchanged. */
 .activity-rows {
+  position: absolute;
+  top: 16px; bottom: 14px;     /* match .activity-log padding */
+  left: 0; right: 0;
+  padding: 0 4px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 0;
-  padding: 0 4px;
-  flex: 1;
-  min-height: 0;
 }
 
 .activity-row {
