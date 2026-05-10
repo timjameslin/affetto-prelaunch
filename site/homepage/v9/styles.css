@@ -1675,73 +1675,239 @@ img, svg { display: block; max-width: 100%; }
 .manifesto-attr .who { color: var(--ink-2); font-weight: 600; }
 
 /* ============================================================
-   FORCES
+   FORCES — clarity-first stacked blocks (Mintlify-influenced)
+   Each force is a uniform two-column row: prose on the left,
+   one focused data artifact on the right. No scroll-jacking.
    ============================================================ */
-.forces-list { margin-top: 16px; }
-.force {
+.forces-list {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+}
+.f-row {
   display: grid;
-  grid-template-columns: 80px 1fr 200px;
-  gap: 32px;
-  padding: 32px 0;
+  grid-template-columns: 56px minmax(0, 1.15fr) minmax(0, 1fr);
+  column-gap: clamp(28px, 4vw, 64px);
+  row-gap: 24px;
+  align-items: start;
+  padding: clamp(40px, 5vh, 64px) 0;
   border-top: 1px solid var(--rule);
-  align-items: baseline;
 }
-.force:last-child { border-bottom: 1px solid var(--rule); }
-@media (max-width: 1099px) {
-  .force { grid-template-columns: 60px 1fr; gap: 20px; }
-  .force-stat { grid-column: 1 / -1; padding-left: 80px; margin-top: 8px; }
-}
-/* keep .force-stat indented under the force-name column at all widths
-   (padding-left: 80px from the 1099px rule applies to small mobile too)
-   so the stat block visually aligns with the headline + description */
+.f-row:last-of-type { border-bottom: 1px solid var(--rule); }
 
-.force-num {
+/* Index — left rail, mono numeral */
+.f-index {
   font-family: var(--md-sys-typescale-mono-family);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
+  letter-spacing: 0.06em;
   color: var(--ink-4);
-  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+  padding-top: 6px;
 }
-.force-content { display: flex; flex-direction: column; gap: 10px; max-width: 56ch; }
-.force-name {
-  font-family: var(--md-sys-typescale-plain-family);
-  font-size: 17px;
-  font-weight: 500;
-  color: var(--ink);
-  letter-spacing: 0;
-}
-.force-line {
-  font-family: var(--md-sys-typescale-plain-family);
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--ink-3);
-  line-height: 1.5;
-  letter-spacing: 0.25px;
-}
-.force-stat {
+.f-index .accent { color: var(--accent); }
+
+/* Prose column */
+.f-prose .f-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-family: var(--md-sys-typescale-mono-family);
-  font-size: 13px;
-  color: var(--ink-3);
-  line-height: 1.5;
-  letter-spacing: 0.25px;
-}
-.force-stat .v {
-  color: var(--ink);
-  font-size: 18px;
+  font-size: 11px;
   font-weight: 500;
-  display: block;
-  margin-bottom: 4px;
-  font-family: var(--md-sys-typescale-plain-family);
-  letter-spacing: 0;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  padding: 5px 10px 5px 8px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--paper);
 }
-.force-stat .src {
-  display: block;
-  margin-top: 4px;
-  color: var(--ink-4);
+.f-prose .f-tag::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.f-prose .f-head {
+  margin-top: 18px;
+  font-family: var(--md-sys-typescale-plain-family);
+  font-weight: 500;
+  font-size: clamp(22px, 2.4vw, 30px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-wrap: balance;
+  max-width: 22ch;
+}
+.f-prose .f-head em {
+  font-style: normal;
+  color: var(--accent);
+  font-weight: 500;
+}
+.f-prose .f-body {
+  margin-top: 16px;
+  font-family: var(--md-sys-typescale-plain-family);
+  font-size: 15.5px;
+  font-weight: 400;
+  line-height: 1.62;
+  color: var(--ink-2);
+  letter-spacing: 0.12px;
+  text-wrap: pretty;
+  max-width: 52ch;
+}
+.f-prose .f-body p + p { margin-top: 12px; }
+.f-prose .f-body em { font-style: italic; color: var(--ink); }
+
+/* Artifact column — uniform card */
+.f-artifact {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: clamp(20px, 2.4vw, 28px);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 100%;
+  position: relative;
+}
+.f-artifact .f-art-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--rule-soft);
+  font-family: var(--md-sys-typescale-mono-family);
   font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.f-artifact .f-art-head .pip {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-right: 8px;
+  vertical-align: 1px;
+}
+.f-artifact .f-art-head .right { color: var(--ink-4); }
+
+/* Stat artifact */
+.f-stat {
+  font-family: var(--md-sys-typescale-plain-family);
+  font-weight: 500;
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.f-stat .accent { color: var(--accent); }
+.f-stat .unit {
+  display: block;
+  margin-top: 12px;
+  font-family: var(--md-sys-typescale-mono-family);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--ink-3);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1.45;
+}
+.f-source {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px dashed var(--rule-soft);
+  font-family: var(--md-sys-typescale-mono-family);
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--ink-4);
   letter-spacing: 0.13em;
   text-transform: uppercase;
+  line-height: 1.55;
+}
+
+/* Quote artifact — same box, different content */
+.f-quote {
+  font-family: var(--md-sys-typescale-plain-family);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.5;
+  letter-spacing: 0.1px;
+  color: var(--ink-2);
+  border-left: 2px solid var(--accent);
+  padding-left: 16px;
+  text-wrap: pretty;
+}
+.f-quote-attr {
+  font-family: var(--md-sys-typescale-mono-family);
+  font-size: 10px;
   font-weight: 500;
+  color: var(--ink-4);
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  line-height: 1.55;
+  padding-left: 18px;
+}
+
+/* Convergence — full-width terminal block, same visual register but inverted */
+.f-converge {
+  margin-top: 48px;
+  background: var(--ink);
+  color: #fff;
+  padding: clamp(36px, 5vh, 56px) clamp(28px, 4vw, 56px);
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  column-gap: clamp(28px, 4vw, 64px);
+  align-items: center;
+  border-radius: 4px;
+}
+.f-converge .f-index { color: rgba(255,255,255,0.55); padding-top: 0; }
+.f-converge .f-index .accent { color: var(--accent); }
+.f-converge .f-conv-head {
+  font-family: var(--md-sys-typescale-plain-family);
+  font-weight: 500;
+  font-size: clamp(22px, 2.2vw, 28px);
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+  text-wrap: balance;
+  margin: 0;
+}
+.f-converge .f-conv-head .quiet { color: rgba(255,255,255,0.6); font-weight: 400; }
+.f-converge .f-conv-meta {
+  font-family: var(--md-sys-typescale-mono-family);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  white-space: nowrap;
+  align-self: end;
+}
+.f-converge .f-conv-meta .accent { color: var(--accent); }
+
+/* Mobile collapse — index inline, artifact below prose */
+@media (max-width: 899px) {
+  .f-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 36px 0;
+  }
+  .f-index { padding-top: 0; }
+  .f-artifact { min-height: 0; }
+  .f-converge {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 32px 24px;
+  }
+  .f-converge .f-conv-meta { align-self: start; }
 }
 
 /* ============================================================
